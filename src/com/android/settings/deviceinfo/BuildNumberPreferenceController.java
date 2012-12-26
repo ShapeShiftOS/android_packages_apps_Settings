@@ -209,7 +209,7 @@ public class BuildNumberPreferenceController extends BasePreferenceController im
                 }
                 mDevHitToast = Toast.makeText(mContext,
                         mContext.getResources().getQuantityString(
-                                R.plurals.show_dev_countdown, mDevHitCountdown,
+                                R.plurals.show_dev_countdown_cm, mDevHitCountdown,
                                 mDevHitCountdown),
                         Toast.LENGTH_SHORT);
                 mDevHitToast.show();
@@ -266,7 +266,7 @@ public class BuildNumberPreferenceController extends BasePreferenceController im
         if (mDevHitToast != null) {
             mDevHitToast.cancel();
         }
-        mDevHitToast = Toast.makeText(mContext, R.string.show_dev_on,
+        mDevHitToast = Toast.makeText(mContext, R.string.show_dev_on_cm,
                 Toast.LENGTH_LONG);
         mDevHitToast.show();
     }
