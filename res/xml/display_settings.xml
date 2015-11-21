@@ -76,11 +76,11 @@
         android:key="xscreen_category"
         android:title="@string/xscreen_category_title">
 
-        <SwitchPreference
-            android:key="auto_rotate"
-            android:title="@string/accelerometer_title"
-            settings:keywords="@string/keywords_auto_rotate"
-            settings:controller="com.android.settings.display.AutoRotatePreferenceController" />
+    	<Preference
+            android:key="display_rotation"
+            android:fragment="com.android.settings.preference.DisplayRotation"
+            android:title="@string/display_rotation_title"
+            android:summary="@string/display_rotation_subtitle" />
 
         <com.android.settings.display.TimeoutListPreference
             android:key="screen_timeout"
