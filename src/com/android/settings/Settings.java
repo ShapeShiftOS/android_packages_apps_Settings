@@ -240,4 +240,7 @@ public class Settings extends SettingsActivity {
      */
     public static class MediaControlsSettingsActivity extends SettingsActivity {}
 
+    // ShapeShiftOS Settings
+    public static class ShapeShifterSettingsActivity extends SettingsActivity {}
+
 }
