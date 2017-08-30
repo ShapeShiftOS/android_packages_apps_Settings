@@ -13,6 +13,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- ShapeShifter -->
+    <string name="shapeshifter_title">ShapeShifter</string>
+    <string name="shapeshifter_activity_summary">Customize your device</string>
+
     <!-- ShapeShiftOS version -->
     <string name="about_device_name">ShapeShiftOS codename</string>
     <string name="ssos_version">ShapeShiftOS version</string>
