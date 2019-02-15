@@ -154,4 +154,6 @@
 
     <color name="settings_panel_background_color">@android:color/white</color>
 
+    <color name="crvs_dashboard_battery">#B2EBF2</color>
+
 </resources>
