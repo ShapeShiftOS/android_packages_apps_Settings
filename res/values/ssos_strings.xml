@@ -288,4 +288,10 @@
     <string name="battery_stats_message">Battery usage data will be lost</string>
     <string name="battery_stats_clear">@string/proxy_clear_text</string>
 
+    <!-- Smart charging -->
+    <string name="smart_charging_title">Smart Charging</string>
+    <string name="smart_charging_summary">Set maximum charging level</string>
+    <string name="smart_charging_switch_title">Use Smart charging</string>
+    <string name="smart_charging_level_title">Trigger level</string>
+
 </resources>
