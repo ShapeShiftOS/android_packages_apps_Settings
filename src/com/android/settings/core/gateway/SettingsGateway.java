@@ -161,6 +161,7 @@ import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSetting
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.ssos.shapeshifter.ShapeShifterSettings;
+import com.ssos.shapeshifter.fragments.system_misc.SmartPixels;
 
 public class SettingsGateway {
 
@@ -310,7 +311,8 @@ public class SettingsGateway {
             InteractAcrossProfilesSettings.class.getName(),
             InteractAcrossProfilesDetails.class.getName(),
             MediaControlsSettings.class.getName(),
-            ShapeShifterSettings.class.getName()
+            ShapeShifterSettings.class.getName(),
+            SmartPixels.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -352,5 +354,6 @@ public class SettingsGateway {
             UserBackupSettingsActivity.class.getName(),
             // ShapeShiftOS
             Settings.ShapeShifterSettingsActivity.class.getName(),
+            Settings.SmartPixelsActivity.class.getName(),
     };
 }
