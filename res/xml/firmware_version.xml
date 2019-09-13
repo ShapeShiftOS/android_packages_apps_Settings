@@ -30,6 +30,14 @@
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
 
+    <!-- ShapeShift version -->
+    <Preference
+        android:key="ssos_version"
+        android:title="@string/ssos_version"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.ShapeShiftVersionPreferenceController"/>
+
     <!-- Security patch -->
     <Preference
         android:key="security_key"
