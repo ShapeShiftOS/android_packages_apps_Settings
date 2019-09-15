@@ -237,6 +237,7 @@
     <string name="power_button_torch_title">Быстрый фонарик</string>
     <string name="power_button_torch_summary">Включать фонарик долгим нажатием кнопки питания при выключенном экране</string>
 
-
+    <!-- battery temperature -->
+    <string name="battery_temperature">Температура батареи</string>
 
 </resources>
