@@ -17,5 +17,10 @@
     <!-- ExUI version preference -->
     <string name="exui_version">"ExtendedUI version"</string>
     <string name="build_date">"Build date"</string>
-    
+
+    <!-- ExUI display preference categories -->
+    <string name="customization_category_title">customization</string>
+    <string name="xscreen_category_title">screen</string>
+    <string name="brightness_category_title">brightness</string>
+    <string name="themes_category_title">themes</string>
 </resources>
