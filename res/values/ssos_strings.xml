@@ -134,4 +134,6 @@
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">Tap to show info</string>
 
+    <string name="custom_display_cutout_emulation">AOSP Cutout Emulation</string>
+
 </resources>

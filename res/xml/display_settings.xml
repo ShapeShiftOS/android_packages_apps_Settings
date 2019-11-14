@@ -108,6 +108,11 @@
         android:fragment="com.android.settings.display.ToggleFontSizePreferenceFragment"
         settings:controller="com.android.settings.display.FontSizePreferenceController" />
 
+    <ListPreference
+        android:key="display_cutout_emulation"
+        android:title="@string/custom_display_cutout_emulation"
+        settings:keywords="@string/display_cutout_emulation_keywords" />     
+
     <com.android.settings.display.ScreenZoomPreference
         android:key="display_settings_screen_zoom"
         android:title="@string/screen_zoom_title"
