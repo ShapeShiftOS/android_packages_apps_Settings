@@ -44,7 +44,6 @@
         settings:searchable="false"/>
 
     </PreferenceCategory>
-
     <PreferenceCategory
         android:key="brightness_category"
         android:title="@string/brightness_category_title">
@@ -106,7 +105,11 @@
             android:summary="@string/hide_notch_subtitle"
             android:defaultValue="false"
             settings:controller="com.android.settings.display.HideNotchController" />
-        
+
+    <ListPreference
+        android:key="display_cutout_emulation"
+        android:title="@string/custom_display_cutout_emulation"
+        settings:keywords="@string/display_cutout_emulation_keywords" />        
 
         <Preference
             android:key="color_mode"
