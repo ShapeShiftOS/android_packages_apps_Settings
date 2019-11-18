@@ -31,6 +31,9 @@
     <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="tablet">Locate the fingerprint sensor on the left side of your tablet.</string>
     <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="tablet">Locate the fingerprint sensor on the right side of your tablet.</string>
 
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_message">Show an animated arrow for back gesture</string>
+
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>
     <string name="display_rotation_subtitle">Autorotation, 0, 90, 180. 270 degrees</string>
