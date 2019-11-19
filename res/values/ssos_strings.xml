@@ -62,4 +62,8 @@
     <string name="qstile_requires_unlocking_title">Make secure tiles require unlocking</string>
     <string name="qstile_requires_unlocking_summary">Some system tiles will require unlocking before you can acccess them from lock screen.</string>
 
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always on when charging</string>
+    <string name="doze_on_charge_summary">Show doze screen all the time when charging</string>
+
 </resources>
