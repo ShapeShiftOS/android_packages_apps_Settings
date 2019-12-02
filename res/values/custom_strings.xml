@@ -64,6 +64,9 @@
     <string name="back_gesture_arrow_message">Show an animated arrow for back gesture</string>
     <string name="back_gesture_haptic">Enable haptic tick effect on back gesture</string>
 
+    <!-- ROM version -->
+    <string name="about_device_name">Device</string>
+
     <!-- Home handle sizing -->
     <string name="home_handle_sizer_title">Gesture bar size</string>
     <string name="home_handle_low_label">Small (AOSP)</string>
