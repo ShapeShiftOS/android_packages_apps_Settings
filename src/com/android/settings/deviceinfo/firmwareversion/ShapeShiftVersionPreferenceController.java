@@ -79,9 +79,9 @@ public class ShapeShiftVersionPreferenceController extends BasePreferenceControl
         String ssosReleasetype =  SystemProperties.get(ROM_RELEASETYPE_PROP,
                 this.mContext.getString(R.string.unknown));
         if (!ssosVersion.isEmpty() && !ssosReleasetype.isEmpty())
-            return ssosVersion + " | " + ssosReleasetype;
+            return ssosVersion + " \\ " + ssosReleasetype;
         else
-            return mContext.getString(R.string.ssos_version_default);
+            return mContext.getString(R.string.unknown);
     }
 
     @Override
