@@ -63,7 +63,7 @@ public class SettingsHomepageActivity extends FragmentActivity {
         final AvatarViewMixin avatarViewMixin = new AvatarViewMixin(this, avatarView);
         getLifecycle().addObserver(avatarViewMixin);
 
-        if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
+        if (!getSystemService(ActivityManager.class).isLowRamDevice() && isHomepageSuggestionEnabled()) {
             // Only allow contextual feature on high ram devices.
             showFragment(new ContextualCardsFragment(), R.id.contextual_cards_content);
         }
@@ -91,6 +91,11 @@ public class SettingsHomepageActivity extends FragmentActivity {
             fragmentTransaction.show(showFragment);
         }
         fragmentTransaction.commit();
+    }
+
+    private boolean isHomepageSuggestionEnabled() {
+        return Settings.System.getInt(this.getContentResolver(),
+        Settings.System.SETTINGS_SUGGESTION_CARDS, 0) != 0;
     }
 
     private boolean isHomepageSpacerEnabled() {
