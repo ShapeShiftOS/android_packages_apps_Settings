@@ -56,7 +56,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     faceunlock_utils 
   
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
-    packages/apps/ConfigCenter/res
+    packages/apps/ConfigCenter/res \
+    packages/apps/TouchGestures/res
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
