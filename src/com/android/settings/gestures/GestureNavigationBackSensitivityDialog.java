@@ -45,6 +45,8 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
     private static final String KEY_BACK_HEIGHT = "back_height";
     private static final String KEY_HOME_HANDLE_SIZE = "home_handle_width";
 
+     private boolean mGesturePillSwitchChecked;
+
     public static void show(SystemNavigationGestureSettings parent, int sensitivity, int height, int length) {
         if (!parent.isAdded()) {
             return;
@@ -96,6 +98,16 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
                 mGestureHapticChecked = GestureHapticSwitch.isChecked() ? true : false;
             }
         });
+        final Switch gesturePillSwitch = view.findViewById(R.id.gesture_pill_switch);
+        mGesturePillSwitchChecked = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.GESTURE_PILL_TOGGLE, 0) == 1;
+        gesturePillSwitch.setChecked(mGesturePillSwitchChecked);
+        gesturePillSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mGesturePillSwitchChecked = gesturePillSwitch.isChecked() ? true : false;
+            }
+        });
         return new AlertDialog.Builder(getContext())
                 .setTitle(R.string.back_options_dialog_title)
                 .setMessage(R.string.back_sensitivity_dialog_message)
@@ -115,6 +127,11 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
                     int length = seekBarHandleSize.getProgress();
                     getArguments().putInt(KEY_HOME_HANDLE_SIZE, length);
                     SystemNavigationGestureSettings.setHomeHandleSize(getActivity(), length);
+                    Settings.System.putInt(getActivity().getContentResolver(),
+                            Settings.System.GESTURE_PILL_TOGGLE, mGesturePillSwitchChecked ? 1 : 0);
+                    SystemNavigationGestureSettings.setBackGestureOverlaysToUse(getActivity());
+                    SystemNavigationGestureSettings.setCurrentSystemNavigationMode(getActivity(),
+                            getOverlayManager(), SystemNavigationGestureSettings.getCurrentSystemNavigationMode(getActivity()));
                 })
                 .create();
     }
