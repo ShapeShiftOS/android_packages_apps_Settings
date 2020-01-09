@@ -30,7 +30,7 @@
         android:layout_height="@dimen/homepage_logo_size"
         android:layout_gravity="center"
         android:layout_marginBottom="@dimen/homepage_spacer_imageview_marginBottom"
-        android:src="@drawable/ic_homepage_config_center"/>
+        android:src="@drawable/ic_homepage_config_center_exui"/>
 
     <TextView 
         android:layout_height="wrap_content"

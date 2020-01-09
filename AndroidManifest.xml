@@ -3274,7 +3274,7 @@
         <!-- Config Center -->
         <activity android:name="Settings$ConfigCenterActivity"
             android:label="@string/config_center_title"
-            android:icon="@drawable/ic_homepage_config_center"
+            android:icon="@drawable/ic_homepage_config_center_exui"
             android:taskAffinity="com.android.settings">
             <intent-filter android:priority="1">
                 <action android:name="com.exui.config.center.ConfigCenter" />
