@@ -88,7 +88,7 @@ public class ExUIVersionDetailPreferenceController extends BasePreferenceControl
             }
 	    final Intent intent = new Intent(Intent.ACTION_MAIN)
                     .setClassName(
-                            "android", com.android.internal.app.PlatLogoActivity.class.getName());
+                            "android", com.android.internal.app.ExUIEasterEgg.class.getName());
             try {
                 mContext.startActivity(intent);
             } catch (Exception e) {
