@@ -64,7 +64,7 @@ public class ExUIVersionDetailPreferenceController extends BasePreferenceControl
     @Override
     public CharSequence getSummary() {
         return SystemProperties.get(KEY_EXUI_VERSION_PROP,
-                mContext.getString(R.string.unknown)) + "-" + SystemProperties.get(KEY_EXUI_BUILDTYPE_PROP, mContext.getString(R.string.unknown));
+                mContext.getString(R.string.unknown)) + " | " + SystemProperties.get(KEY_EXUI_BUILDTYPE_PROP, mContext.getString(R.string.unknown));
     }
 
     @Override
