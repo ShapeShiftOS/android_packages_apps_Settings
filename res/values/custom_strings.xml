@@ -34,6 +34,11 @@
     <!-- Back gesture animation -->
     <string name="back_gesture_arrow_message">Show an animated arrow for back gesture</string>
 
+    <!-- Home handle sizing -->
+    <string name="home_handle_sizer_title">Gesture bar size</string>
+    <string name="home_handle_low_label">Small (AOSP)</string>
+    <string name="home_handle_high_label">Long</string>
+
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>
     <string name="display_rotation_subtitle">Autorotation, 0, 90, 180. 270 degrees</string>
