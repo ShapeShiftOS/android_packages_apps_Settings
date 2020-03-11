@@ -415,6 +415,13 @@
     <!-- System navigation settings illustration height -->
     <dimen name="system_navigation_illustration_height">320dp</dimen>
 
+    <!-- Header title size of advanced bluetooth device -->
+    <dimen name="advanced_bluetooth_header_title_text_size">16sp</dimen>
+
+    <!-- Battery meter icon size of advanced bluetooth device -->
+    <dimen name="advanced_bluetooth_battery_meter_width">7.8dp</dimen>
+    <dimen name="advanced_bluetooth_battery_meter_height">13dp</dimen>
+
     <dimen name="homepage_spacer_off_margin">@dimen/actionbar_size</dimen>
     <dimen name="homepage_spacer_height">200dp</dimen>
     <dimen name="homepage_spacer_margin">255dp</dimen>
