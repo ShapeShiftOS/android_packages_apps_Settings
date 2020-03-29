@@ -15,12 +15,16 @@
   ~ limitations under the License
   -->
 
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="12dp">
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
 
     <SeekBar
         android:id="@+id/back_sensitivity_seekbar"
@@ -170,7 +174,7 @@
                   android:ellipsize="marquee" />
 
     </LinearLayout>
-    
+
     <Switch
         android:id="@+id/back_gesture_haptic"
         android:layout_width="match_parent"
@@ -200,5 +204,5 @@
         android:text="@string/gesture_pill_title"
         android:textAppearance="?android:attr/textAppearance" 
         style="@android:style/TextAppearance.Material.Subhead" />
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
