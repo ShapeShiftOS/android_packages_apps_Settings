@@ -40,6 +40,7 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
 
     private boolean mGestureHapticChecked;
     private boolean mShowNavChecked;
+    private boolean mNavigationIMESpace;
 
     private static final String TAG = "GestureNavigationBackSensitivityDialog";
     private static final String KEY_BACK_SENSITIVITY = "back_sensitivity";
@@ -47,8 +48,9 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
     private static final String KEY_HOME_HANDLE_SIZE = "home_handle_width";
     private static final String KEY_BACK_BLOCK_IME = "back_block_ime";
     private static final String KEY_SHOW_NAV = "show_nav";
+    private static final String KEY_NAVIGATION_IME_SPACE = "navigation_bar_ime_space";
 
-    public static void show(SystemNavigationGestureSettings parent, int sensitivity, int height, int length, boolean blockIme, boolean showNav) {
+    public static void show(SystemNavigationGestureSettings parent, int sensitivity, int height, int length, boolean blockIme, boolean showNav, boolean imeSpace) {
         if (!parent.isAdded()) {
             return;
         }
@@ -61,6 +63,7 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
         bundle.putInt(KEY_HOME_HANDLE_SIZE, length);
         bundle.putBoolean(KEY_BACK_BLOCK_IME, blockIme);
         bundle.putBoolean(KEY_SHOW_NAV, showNav);
+        bundle.putBoolean(KEY_NAVIGATION_IME_SPACE, imeSpace);
         dialog.setArguments(bundle);
         dialog.setTargetFragment(parent, 0);
         dialog.show(parent.getFragmentManager(), TAG);
@@ -113,6 +116,16 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
                 mShowNavChecked = showNavSwitch.isChecked() ? true : false;
             }
         });
+        final Switch imeSpaceSwitch = view.findViewById(R.id.navigation_bar_ime_space);
+        mNavigationIMESpace = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NAVIGATION_BAR_IME_SPACE, 1) == 1;
+        imeSpaceSwitch.setChecked(mNavigationIMESpace);
+        imeSpaceSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mNavigationIMESpace = imeSpaceSwitch.isChecked() ? true : false;
+            }
+        });
 
         return new AlertDialog.Builder(getContext())
                 .setTitle(R.string.back_options_dialog_title)
@@ -125,6 +138,8 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
                     getArguments().putInt(KEY_BACK_HEIGHT, height);
                     boolean showNav = showNavSwitch.isChecked();
                     getArguments().putBoolean(KEY_SHOW_NAV, showNav);
+                    boolean imeSpace = imeSpaceSwitch.isChecked();
+                    getArguments().putBoolean(KEY_NAVIGATION_IME_SPACE, imeSpace);
                     Settings.System.putInt(getActivity().getContentResolver(),
                             Settings.System.GESTURE_NAVBAR_SHOW, mShowNavChecked ? 1 : 0);
                     boolean blockIme = blockImeSwitch.isChecked();
@@ -141,6 +156,7 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
                     getArguments().putInt(KEY_HOME_HANDLE_SIZE, length);
                     SystemNavigationGestureSettings.setHomeHandleSize(getActivity(), length);
                     SystemNavigationGestureSettings.setShowNav(getActivity(), showNav);
+                    SystemNavigationGestureSettings.setImeSpace(getActivity(), imeSpace);
                 })
                 .create();
     }

@@ -55,4 +55,7 @@
     <string name="show_gestures_navbar_title_text">Toggle navbar</string>
     <string name="show_gestures_navbar_switch_text">Show gestures navbar</string>
 
+    <!-- IME button space -->
+    <string name="navigation_bar_ime_space_title">Enable to show IME button space and pill</string>
+
 </resources>
