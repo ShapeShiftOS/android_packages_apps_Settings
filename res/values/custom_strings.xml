@@ -241,7 +241,7 @@ Notifications may be delayed for these apps."</string>
     <string name="also_vibrate_for_calls_summary">Also vibrate for calls</string>
     <!-- Custom Vibration fragment -->
     <string name="vibration_preferences">Vibration &amp; haptics</string>
-    <string name="summary_vibration_preferences">Change intensities, pattern and more</string>
+    <string name="summary_vibration_preferences">In-call vibration, patterns and more</string>
     <string name="keywords_vibration_preferences">vibration pattern, vibration intensity, incall, haptics, tap, vibration strength</string>
     <string name="ringtone_vibration_pattern">Ringtone vibration pattern</string>
     <string name="vibration_intensity_ringer">Ringtone vibration intensity</string>
@@ -256,6 +256,15 @@ Notifications may be delayed for these apps."</string>
     <string name="pattern_mm_mm_mm">mm-mm-mm</string>
     <string name="pattern_da_da_dzzz">da-da-dzzz</string>
     <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">In-call vibration</string>
+    <string name="incall_vibrate_connect_title">Vibrate on connect</string>
+    <string name="incall_vibrate_connect_summary">Enable to vibrate after call connect</string>
+    <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
+    <string name="incall_vibrate_call_wait_summary">Enable to vibrate while call is on waiting</string>
+    <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
+    <string name="incall_vibrate_disconnect_summary">Enable to vibrate after call disconnect</string>
 
     <!-- Scramble PIN layout on lockscreen -->
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>

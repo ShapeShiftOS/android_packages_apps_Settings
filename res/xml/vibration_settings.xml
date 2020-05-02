@@ -21,6 +21,29 @@
     android:title="@string/vibration_preferences"
     settings:keywords="@string/keywords_vibration_preferences">
 
+    <PreferenceCategory
+        android:key="incall_vib_options"
+        android:title="@string/incall_vibration_category">
+
+        <com.exui.config.center.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_connect"
+            android:title="@string/incall_vibrate_connect_title"
+            android:summary="@string/incall_vibrate_connect_summary"
+            android:defaultValue="false" />
+
+        <com.exui.config.center.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_callwaiting"
+            android:title="@string/incall_vibrate_call_wait_title"
+            android:summary="@string/incall_vibrate_call_wait_summary"
+            android:defaultValue="false" />
+
+        <com.exui.config.center.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_disconnect"
+            android:title="@string/incall_vibrate_disconnect_title"
+            android:summary="@string/incall_vibrate_disconnect_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
     <!-- Vibrate on touch -->
     <SwitchPreference
         android:key="vibrate_on_touch"
