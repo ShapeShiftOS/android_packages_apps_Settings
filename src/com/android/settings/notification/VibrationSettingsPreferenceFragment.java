@@ -44,13 +44,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class VibrationSettingsPreferenceFragment extends DashboardFragment 
+public class VibrationSettingsPreferenceFragment extends DashboardFragment
             implements Preference.OnPreferenceClickListener {
 
     private static final String TAG = "VibrationSettingsPreferenceFragment";
 
     private static final String RINGTONE_VIBRATION_PATTERN = "ringtone_vibration_pattern";
-    private static final String INCALL_FEEDBACK_VIBRATE = "incall_feeedback_vibrate";
 
     private static final String[] mKeys = {"pattern_dzzz_dzzz", "pattern_dzzz_da", "pattern_mm_mm_mm",
         "pattern_da_da_dzzz", "pattern_da_dzzz_da"};
@@ -154,7 +153,6 @@ public class VibrationSettingsPreferenceFragment extends DashboardFragment
 
     private Preference mRingerVibrationIntensity;
     private Preference mNotifVibrationIntensity;
-    private SwitchPreference mIncallFeedback;
 
     private SettingsObserver mSettingObserver;
     private final Handler mH = new Handler();
@@ -179,7 +177,6 @@ public class VibrationSettingsPreferenceFragment extends DashboardFragment
 
         mRingerVibrationIntensity = (Preference) findPreference(RING_VIBRATION_INTENSITY);
         mNotifVibrationIntensity = (Preference) findPreference(NOTIFICATION_VIBRATION_INTENSITY);
-        mIncallFeedback = (SwitchPreference) findPreference(INCALL_FEEDBACK_VIBRATE);
 
         for (int i = 0; i < 5; i++) {
             mRadioPreferences[i] = (RadioButtonPreference) findPreference(mKeys[i]);
@@ -197,10 +194,6 @@ public class VibrationSettingsPreferenceFragment extends DashboardFragment
             mNotifVibrationIntensity.setEnabled(false);
             mNotifVibrationIntensity.setVisible(false);
         }
-
-        mIncallFeedback.setOnPreferenceClickListener(this);
-
-        mIncallFeedback.setChecked(Settings.System.getIntForUser(mContentResolver, INCALL_FEEDBACK_VIBRATE, 0, UserHandle.USER_CURRENT) == 1);
 
         final int currentPattern = Settings.System.getIntForUser(mContentResolver, RINGTONE_VIBRATION_PATTERN, 0, UserHandle.USER_CURRENT);
 
@@ -245,9 +238,6 @@ public class VibrationSettingsPreferenceFragment extends DashboardFragment
             int val = Arrays.asList(mKeys).indexOf(key);
             updateVibrationPattern(val);
             performVibrationDemo(val);
-        } else if (preference instanceof SwitchPreference) {
-            Settings.System.putIntForUser(mContentResolver, INCALL_FEEDBACK_VIBRATE,
-                ((SwitchPreference) preference).isChecked() ? 1 : 0, UserHandle.USER_CURRENT);
         } else {
             final VibrationIntensityDialog dialog = new VibrationIntensityDialog();
             dialog.setParameters(mContext, key, preference);

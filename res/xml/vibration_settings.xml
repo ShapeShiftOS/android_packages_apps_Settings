@@ -21,13 +21,6 @@
     android:title="@string/vibration_preferences"
     settings:keywords="@string/keywords_vibration_preferences">
 
-    <!-- In-call feedback -->
-    <SwitchPreference
-        android:key="incall_feeedback_vibrate"
-        android:title="@string/incall_feeedback_vibrate_title"
-        android:defaultValue="false"
-        android:summary="@string/incall_feeedback_summary"/>
-
     <!-- Vibrate on touch -->
     <SwitchPreference
         android:key="vibrate_on_touch"
@@ -38,6 +31,7 @@
     <SwitchPreference
         android:key="vibrate_when_ringing"
         android:title="@string/vibrate_when_ringing_title"
+        android:summary="@string/also_vibrate_for_calls_summary"
         settings:controller="com.android.settings.notification.VibrateWhenRingPreferenceController"/>
 
     <Preference

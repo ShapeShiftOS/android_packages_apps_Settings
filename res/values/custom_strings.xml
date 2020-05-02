@@ -238,9 +238,7 @@ Notifications may be delayed for these apps."</string>
     <!-- IME button space -->
     <string name="navigation_bar_ime_space_title">Show IME space under keyboard</string>
 
-    <!-- In-call feedback -->
-    <string name="incall_feeedback_vibrate_title">In-Call Haptics</string>
-    <string name="incall_feeedback_summary">Vibrate to indicate call status</string>
+    <string name="also_vibrate_for_calls_summary">Also vibrate for calls</string>
     <!-- Custom Vibration fragment -->
     <string name="vibration_preferences">Vibration &amp; haptics</string>
     <string name="summary_vibration_preferences">Change intensities, pattern and more</string>
