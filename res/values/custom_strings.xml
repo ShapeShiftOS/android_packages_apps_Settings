@@ -127,4 +127,6 @@
     <string name="security_settings_face_require_swipe">Swipe up to unlock</string>
     <string name="security_settings_face_require_swipe_summary">Swipe up on the lockscreen to use face unlock</string>
 
+
+    <string name="specs_title">Phone Specifications</string>
 </resources>
