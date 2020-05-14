@@ -37,7 +37,6 @@ import com.android.settings.R;
 import com.android.settings.SubSettings;
 import com.android.settings.Utils;
 import com.android.settings.bluetooth.BluetoothDeviceDetailsFragment;
-import com.android.settings.bluetooth.BluetoothPairingDetail;
 import com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment;
 import com.android.settings.core.SubSettingLauncher;
 import com.android.settings.slices.CustomSliceRegistry;
@@ -93,20 +92,13 @@ public class BluetoothDevicesSlice implements CustomSliceable {
 
         final IconCompat icon = IconCompat.createWithResource(mContext,
                 com.android.internal.R.drawable.ic_settings_bluetooth);
-        final IconCompat pairNewIcon = IconCompat.createWithResource(mContext,
-                R.drawable.ic_add_24dp);
         final CharSequence title = mContext.getText(R.string.bluetooth_devices);
         final CharSequence titleNoBluetoothDevices = mContext.getText(
                 R.string.no_bluetooth_devices);
-        final CharSequence titlePairNew = mContext.getText(R.string.bluetooth_pairing_pref_title);
         final PendingIntent primaryActionIntent = PendingIntent.getActivity(mContext, 0,
                 getIntent(), 0);
         final SliceAction primarySliceAction = SliceAction.createDeeplink(primaryActionIntent, icon,
                 ListBuilder.ICON_IMAGE, title);
-        final PendingIntent pairNewActionIntent = PendingIntent.getActivity(mContext, 0,
-                getPairNewIntent(), 0);
-        final SliceAction pairNewAction = SliceAction.createDeeplink(pairNewActionIntent, pairNewIcon,
-                ListBuilder.ICON_IMAGE, titlePairNew);
         final ListBuilder listBuilder =
                 new ListBuilder(mContext, getUri(), ListBuilder.INFINITY)
                         .setAccentColor(COLOR_NOT_TINTED);
@@ -116,22 +108,11 @@ public class BluetoothDevicesSlice implements CustomSliceable {
 
         // Return a header with IsError flag, if no Bluetooth devices.
         if (rows.isEmpty()) {
-            listBuilder.setHeader(new ListBuilder.HeaderBuilder()
+            return listBuilder.setHeader(new ListBuilder.HeaderBuilder()
                     .setTitle(titleNoBluetoothDevices)
-                    .setPrimaryAction(primarySliceAction));
-
-            if (!BluetoothAdapter.getDefaultAdapter().isEnabled()) {
-                // this will hide the slice!
-                listBuilder.setIsError(true);
-            }
-            // add pair new row
-            final ListBuilder.RowBuilder rowBuilder = new ListBuilder.RowBuilder()
-                    .setTitleItem(pairNewIcon, ListBuilder.ICON_IMAGE)
-                    .setTitle(titlePairNew)
-                    .setPrimaryAction(pairNewAction);
-            listBuilder.addRow(rowBuilder);
-
-            return listBuilder.build();
+                    .setPrimaryAction(primarySliceAction))
+                    .setIsError(true)
+                    .build();
         }
 
         // Get displayable device count.
@@ -148,13 +129,6 @@ public class BluetoothDevicesSlice implements CustomSliceable {
             listBuilder.addRow(rows.get(i));
         }
 
-        // add pair new row
-        final ListBuilder.RowBuilder rowBuilder = new ListBuilder.RowBuilder()
-                .setTitleItem(pairNewIcon, ListBuilder.ICON_IMAGE)
-                .setTitle(titlePairNew)
-                .setPrimaryAction(pairNewAction);
-        listBuilder.addRow(rowBuilder);
-
         return listBuilder.build();
     }
 
@@ -169,17 +143,6 @@ public class BluetoothDevicesSlice implements CustomSliceable {
                 SettingsEnums.SLICE)
                 .setClassName(mContext.getPackageName(), SubSettings.class.getName())
                 .setData(getUri());
-    }
-
-    public Intent getPairNewIntent() {
-        final String screenTitle = mContext.getText(R.string.bluetooth_pairing_pref_title)
-                .toString();
-
-        return SliceBuilderUtils.buildSearchResultPageIntent(mContext,
-                BluetoothPairingDetail.class.getName(), "" /* key */,
-                screenTitle,
-                SettingsEnums.SLICE)
-                .setClassName(mContext.getPackageName(), SubSettings.class.getName());
     }
 
     @Override
@@ -261,7 +224,7 @@ public class BluetoothDevicesSlice implements CustomSliceable {
     private List<ListBuilder.RowBuilder> getBluetoothRowBuilder() {
         // According to Bluetooth devices to create row builders.
         final List<ListBuilder.RowBuilder> bluetoothRows = new ArrayList<>();
-        List<CachedBluetoothDevice> bluetoothDevices = getConnectedBluetoothDevices();
+        final List<CachedBluetoothDevice> bluetoothDevices = getConnectedBluetoothDevices();
         for (CachedBluetoothDevice bluetoothDevice : bluetoothDevices) {
             final ListBuilder.RowBuilder rowBuilder = new ListBuilder.RowBuilder()
                     .setTitleItem(getBluetoothDeviceIcon(bluetoothDevice), ListBuilder.ICON_IMAGE)
@@ -280,6 +243,7 @@ public class BluetoothDevicesSlice implements CustomSliceable {
 
             bluetoothRows.add(rowBuilder);
         }
+
         return bluetoothRows;
     }
 

@@ -292,7 +292,7 @@ public class DataUsageSummary extends DataUsageBaseFragment implements DataUsage
         private CharSequence formatUsedData() {
             SubscriptionManager subscriptionManager = (SubscriptionManager) mActivity
                 .getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
-            int defaultSubId = subscriptionManager.getDefaultDataSubscriptionId();
+            int defaultSubId = subscriptionManager.getDefaultSubscriptionId();
             if (defaultSubId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
                 return formatFallbackData();
             }
