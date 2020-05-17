@@ -44,5 +44,6 @@
     <string name="adaptive_playback_timeout_5_min_summary">On (5 minutes)</string>
     <string name="adaptive_playback_timeout_10_min">10 minutes</string>
     <string name="adaptive_playback_timeout_10_min_summary">On (10 minutes)</string>
+    <string name="adaptive_playback_gesture_summary">Adaptive Playback pauses media when the device is muted and resumes when unmuted within the above set time.</string>       
 
 </resources>
