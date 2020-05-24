@@ -150,7 +150,7 @@
     <color name="face_intro_outline">#ffdadce0</color>
 
     <!-- Config Center -->
-    <color name="homepage_config_center_background">#1ae877</color>
+    <color name="homepage_config_center_background">#6534ff</color>
 
     <color name="settings_panel_background_color">@android:color/white</color>
 
