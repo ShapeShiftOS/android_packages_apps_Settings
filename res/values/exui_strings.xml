@@ -19,10 +19,10 @@
     <string name="build_date">"Build date"</string>
 
     <!-- ExUI display preference categories -->
-    <string name="customization_category_title">customization</string>
-    <string name="xscreen_category_title">screen</string>
-    <string name="brightness_category_title">brightness</string>
-    <string name="themes_category_title">themes</string>
+    <string name="customization_category_title">Customization</string>
+    <string name="xscreen_category_title">Screen</string>
+    <string name="brightness_category_title">Brightness</string>
+    <string name="themes_category_title">Themes</string>
 
     <!-- Back Gesture Height -->
     <string name="back_height_low_label">Full</string>
