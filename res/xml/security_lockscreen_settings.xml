@@ -51,10 +51,10 @@
             android:summary="@string/lockdown_settings_summary"
             settings:controller="com.android.settings.security.LockdownButtonPreferenceController" />
 
-        <com.ssos.support.preferences.SystemSettingSwitchPreference 
-            android:key="ambient_battery_percent" 
-            android:title="@string/ambient_battery_percent_title" 
-            android:summary="@string/ambient_battery_percent_summary" 
+        <com.ssos.support.preferences.SystemSettingSwitchPreference
+            android:key="ambient_battery_percent"
+            android:title="@string/ambient_battery_percent_title"
+            android:summary="@string/ambient_battery_percent_summary"
             android:defaultValue="true" />
 
     </PreferenceCategory>
@@ -122,6 +122,14 @@
             android:title="@string/pulse_on_new_tracks_title"
             android:summary="@string/pulse_on_new_tracks_soli_summary"
             settings:controller="com.android.settings.display.PulseOnNewTracksSoliPreferenceController" />
+
+        <com.ssos.support.preferences.SystemSettingListPreference
+            android:key="ambient_music_ticker"
+            android:title="@string/ambient_music_location"
+            android:summary="%s"
+            android:entries="@array/ambient_music_location_entries"
+            android:entryValues="@array/ambient_music_location_values"
+            android:defaultValue="1" />
 
         <Preference
             android:key="ambient_display_custom"
