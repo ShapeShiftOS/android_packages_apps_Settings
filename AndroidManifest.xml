@@ -111,6 +111,9 @@
     <uses-permission android:name="com.google.android.settings.routines.ROUTINES_ACTIONS"/>
     <permission android:name="com.google.android.settings.routines.ROUTINES_ACTIONS" android:protectionLevel="normal|signature|system"/>
 
+    <!-- LineageHardware -->
+    <uses-permission android:name="lineageos.permission.HARDWARE_ABSTRACTION_ACCESS" />
+
     <!-- LiveDisplay -->
     <uses-permission android:name="lineageos.permission.MANAGE_LIVEDISPLAY" />
 
