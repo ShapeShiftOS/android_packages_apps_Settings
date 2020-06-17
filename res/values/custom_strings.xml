@@ -83,9 +83,6 @@
     <string name="display_rotation_180_title">180 degrees</string>
     <string name="display_rotation_270_title">270 degrees</string>
 
-    <!-- Hide notch -->
-    <string name="hide_notch_title">Hide notch</string>
-    <string name="hide_notch_subtitle">Draws black bar behind statusbar to hide notch</string>
 
     <!-- Ambient music ticker pulse -->
     <string name="pulse_on_new_tracks_title">Ambient music ticker</string>
