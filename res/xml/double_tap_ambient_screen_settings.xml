@@ -26,7 +26,7 @@
         app:animation="@raw/gesture_ambient_tap"
         app:preview="@drawable/gesture_ambient_tap" />
 
-    <com.exui.config.center.preference.SystemSettingSwitchPreference
+    <com.exui.config.center.preferences.SystemSettingSwitchPreference
         android:key="doze_trigger_doubletap"
         android:defaultValue="false"
         android:title="@string/doze_double_tap_title"
