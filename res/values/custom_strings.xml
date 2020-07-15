@@ -111,10 +111,6 @@
     <string name="gesture_pill_title">Hide navigation bar pill</string>
     <string name="gesture_pill_message">Hide the navigation bar pill for seamless fullscreen gestures</string>
 
-    <!-- Three-fingers-swipe to screenshot -->
-    <string name="swipe_to_screenshot_gesture_title">Swipe to screenshot</string>
-    <string name="swipe_to_screenshot_gesture_summary">Swipe three fingers to take screenshot</string>
-
     <!-- Volume link notification -->
     <string name="volume_link_notification_title">Link ring &amp; notification volumes</string>
 
@@ -205,6 +201,10 @@
     <string name="connected_tws_device_saved_title">Saved Earbuds</string>
 
     <string name="custom_display_cutout_emulation">AOSP Cutout Emulation</string>
+
+    <!-- Swipe to screenshot -->
+    <string name="swipe_to_screenshot_title">Swipe to screenshot</string>
+    <string name="swipe_to_screenshot_summary">Swipe 3 fingers down the screen to take a screenshot</string>
 
 </resources>
 
