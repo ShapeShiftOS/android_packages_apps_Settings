@@ -321,5 +321,9 @@ Notifications may be delayed for these apps."</string>
     <!-- Battery temp -->
     <string name="battery_temp_title">Battery temperature</string>
 
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">Cycle through modes</string>
+    <string name="prevent_ringing_option_cycle_summary">On (cycle through modes)</string>
+
 </resources>
 
