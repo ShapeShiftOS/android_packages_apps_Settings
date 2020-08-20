@@ -77,13 +77,15 @@
     <string name="about_device_name">Device</string>
 
     <!-- Home handle sizing -->
-    <string name="home_handle_sizer_title">Gesture bar size</string>
+    <string name="home_handle_sizer_title">Navigation bar handle length</string>
     <string name="home_handle_low_label">No Pill</string>
     <string name="home_handle_high_label">Long</string>
+    <string name="home_handle_height_sizer_title">Navigation bar handle thickness</string>
+    <string name="home_handle_thick_label">Thick</string>
 
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>
-    <string name="display_rotation_subtitle">Autorotation, 0, 90, 180. 270 degrees</string>
+    <string name="display_rotation_subtitle">Autorotation, 0, 90, 180, 270 degrees</string>
     <string name="display_rotation_disabled">Disabled</string>
     <string name="display_rotation_unit">degrees</string>
     <string name="display_rotation_category_title">Rotation modes</string>

@@ -49,8 +49,9 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
     private static final String KEY_BACK_BLOCK_IME = "back_block_ime";
     private static final String KEY_SHOW_NAV = "show_nav";
     private static final String KEY_NAVIGATION_IME_SPACE = "navigation_bar_ime_space";
+    private static final String KEY_HOME_HANDLE_HEIGHT = "home_handle_height";
 
-    public static void show(SystemNavigationGestureSettings parent, int sensitivity, int height, int length, boolean blockIme, boolean showNav, boolean imeSpace) {
+    public static void show(SystemNavigationGestureSettings parent, int sensitivity, int height, int length, boolean blockIme, boolean showNav, boolean imeSpace, int handleHeight) {
         if (!parent.isAdded()) {
             return;
         }
@@ -64,6 +65,7 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
         bundle.putBoolean(KEY_BACK_BLOCK_IME, blockIme);
         bundle.putBoolean(KEY_SHOW_NAV, showNav);
         bundle.putBoolean(KEY_NAVIGATION_IME_SPACE, imeSpace);
+        bundle.putInt(KEY_HOME_HANDLE_HEIGHT, handleHeight);
         dialog.setArguments(bundle);
         dialog.setTargetFragment(parent, 0);
         dialog.show(parent.getFragmentManager(), TAG);
@@ -127,6 +129,8 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
             }
         });
 
+        final SeekBar seekBarHandleHeight = view.findViewById(R.id.home_handle_height_seekbar);
+        seekBarHandleHeight.setProgress(getArguments().getInt(KEY_HOME_HANDLE_HEIGHT));
         return new AlertDialog.Builder(getContext())
                 .setTitle(R.string.back_options_dialog_title)
                 .setMessage(R.string.back_sensitivity_dialog_message)
@@ -154,9 +158,12 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
                             Settings.Secure.SHOW_BACK_ARROW_GESTURE, mArrowSwitchChecked ? 1 : 0);
                     int length = seekBarHandleSize.getProgress();
                     getArguments().putInt(KEY_HOME_HANDLE_SIZE, length);
+                    int handleHeight = seekBarHandleHeight.getProgress();
+                    getArguments().putInt(KEY_HOME_HANDLE_HEIGHT, handleHeight);
                     SystemNavigationGestureSettings.setHomeHandleSize(getActivity(), length);
                     SystemNavigationGestureSettings.setShowNav(getActivity(), showNav);
                     SystemNavigationGestureSettings.setImeSpace(getActivity(), imeSpace);
+                    SystemNavigationGestureSettings.setHomeHandleHeight(getActivity(), handleHeight);
                 })
                 .create();
     }
