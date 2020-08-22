@@ -28,7 +28,7 @@
     <string name="back_height_low_label">Full</string>
     <string name="back_height_high_label">Bottom</string>
     <string name="back_options_dialog_title">Options</string>
-    <string name="back_height_message">Amount of screen height used as touchable region for back gesture.</string>
+    <string name="back_height_message">Back gesture height</string>
 
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_screen_title">Adaptive playback</string>
@@ -48,15 +48,15 @@
     <string name="adaptive_playback_timeout_10_min_summary">On (10 minutes)</string>
     <string name="adaptive_playback_gesture_summary">Adaptive Playback pauses media when the device is muted and resumes when unmuted within the above set time.</string>       
 
-    <string name="back_block_ime_title">Disable height of virtual keyboard as touchable region for back gesture.</string>
+    <string name="back_block_ime_title">Block IME space as touchable region for back gesture</string>
 
     <!-- Gesture nav gear options -->
     <!-- [CHAR LIMIT=60] -->
     <string name="show_gestures_navbar_title_text">Toggle navbar</string>
-    <string name="show_gestures_navbar_switch_text">Show gestures navbar</string>
+    <string name="show_gestures_navbar_switch_text">Show gestures bar</string>
 
     <!-- IME button space -->
-    <string name="navigation_bar_ime_space_title">Enable to show IME button space and pill</string>
+    <string name="navigation_bar_ime_space_title">Show IME space under keyboard</string>
 
     <!-- In-call feedback -->
     <string name="incall_feeedback_vibrate_title">In-Call Haptics</string>

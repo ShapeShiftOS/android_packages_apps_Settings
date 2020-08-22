@@ -70,17 +70,17 @@
     <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="tablet">Locate the fingerprint sensor on the right side of your tablet.</string>
 
     <!-- Back gesture animation -->
-    <string name="back_gesture_arrow_message">Show an animated arrow for back gesture</string>
-    <string name="back_gesture_haptic">Enable haptic tick effect on back gesture</string>
+    <string name="back_gesture_arrow_message">Animated arrow for back gesture</string>
+    <string name="back_gesture_haptic">Vibration on back gesture</string>
 
     <!-- ROM version -->
     <string name="about_device_name">Device</string>
 
     <!-- Home handle sizing -->
-    <string name="home_handle_sizer_title">Navigation bar handle length</string>
+    <string name="home_handle_sizer_title">Gesture handle length</string>
     <string name="home_handle_low_label">No Pill</string>
     <string name="home_handle_high_label">Long</string>
-    <string name="home_handle_height_sizer_title">Navigation bar handle thickness</string>
+    <string name="home_handle_height_sizer_title">Gesture handle thickness</string>
     <string name="home_handle_thick_label">Thick</string>
 
     <!-- Display : Rotation -->
