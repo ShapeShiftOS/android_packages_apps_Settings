@@ -275,7 +275,7 @@
            parent="@*android:style/TextAppearance.Material.Widget.Toolbar.Subtitle">
         <item name="android:textSize">@dimen/search_bar_text_size</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:fontFamily">google-sans</item>
+        <item name="android:fontFamily">@*android:string/config_bodyFontFamily</item>
     </style>
 
     <style name="TextAppearance.ConditionCardTitle"
@@ -661,7 +661,7 @@
     <style name="homepage_spacer_title_style">
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
-        <item name="android:fontFamily">google-sans-medium</item>
+        <item name="android:fontFamily">@*android:string/config_headlineFontFamily</item>
     </style>
 
 </resources>
