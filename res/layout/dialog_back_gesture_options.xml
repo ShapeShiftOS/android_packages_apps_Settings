@@ -27,6 +27,15 @@
         android:orientation="vertical"
         android:padding="12dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="12dp"
+        android:textAppearance="?android:attr/textAppearance"
+        android:text="@string/back_sensitivity_dialog_message"
+        style="@android:style/TextAppearance.Material.Subhead" />
+
     <SeekBar
         android:id="@+id/back_sensitivity_seekbar"
         android:layout_width="match_parent"
