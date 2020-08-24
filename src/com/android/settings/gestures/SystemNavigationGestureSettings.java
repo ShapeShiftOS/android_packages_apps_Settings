@@ -162,7 +162,7 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment {
             p.setExtraWidgetVisibility(EXTRA_WIDGET_VISIBILITY_SETTING);
             p.setExtraWidgetOnClickListener((v) -> GestureNavigationBackSensitivityDialog
                     .show(this, getBackSensitivity(getContext(), mOverlayManager),
-                    getBackHeight(getContext()), getHomeHandleSize(getContext()), getBackBlockIme(getContext()), getShowNav(getContext()), getImeSpace(getContext()), getHomeHandleHeight(getContext())));
+                    getBackHeight(getContext()), getHomeHandleSize(getContext()), getBackBlockIme(getContext()), getImeSpace(getContext()), getHomeHandleHeight(getContext())));
         } else {
             p.setExtraWidgetVisibility(EXTRA_WIDGET_VISIBILITY_GONE);
         }
@@ -233,7 +233,7 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment {
         context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE).edit()
                 .putInt(PREFS_BACK_SENSITIVITY_KEY, sensitivity).apply();
         if (getCurrentSystemNavigationMode(context) == KEY_SYSTEM_NAV_GESTURAL) {
-            setNavBarInteractionMode(overlayManager, BACK_GESTURE_INSET_OVERLAYS[sensitivity], false);
+            setNavBarInteractionMode(overlayManager, BACK_GESTURE_INSET_OVERLAYS[sensitivity]);
         }
     }
 
@@ -288,13 +288,6 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment {
                 Settings.System.BACK_GESTURE_BLOCK_IME, 1) == 1;
     }
 
-    static boolean getShowNav(Context context) {
-        boolean show = Settings.System.getIntForUser(context.getContentResolver(),
-                Settings.System.GESTURE_NAVBAR_SHOW, 1,
-                USER_CURRENT) != 0;
-        return show;
-    }
-
     static boolean getImeSpace(Context context) {
         boolean imeSpace = Settings.System.getIntForUser(context.getContentResolver(),
                 Settings.System.NAVIGATION_BAR_IME_SPACE, 1,
@@ -305,13 +298,6 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment {
     static void setImeSpace(Context context, boolean imeSpace) {
         Settings.System.putIntForUser(context.getContentResolver(),
                 Settings.System.NAVIGATION_BAR_IME_SPACE, imeSpace ? 1 : 0,
-                USER_CURRENT);
-        updateNavigationBarOverlays(context);
-    }
-
-    static void setShowNav(Context context, boolean show) {
-        Settings.System.putIntForUser(context.getContentResolver(),
-                Settings.System.GESTURE_NAVBAR_SHOW, show ? 1 : 0,
                 USER_CURRENT);
         updateNavigationBarOverlays(context);
     }
@@ -344,15 +330,15 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment {
         switch (key) {
             case KEY_SYSTEM_NAV_GESTURAL:
                 int sensitivity = getBackSensitivity(context, overlayManager);
-                setNavBarInteractionMode(overlayManager, BACK_GESTURE_INSET_OVERLAYS[sensitivity], false);
+                setNavBarInteractionMode(overlayManager, BACK_GESTURE_INSET_OVERLAYS[sensitivity]);
                 break;
             case KEY_SYSTEM_NAV_2BUTTONS:
-                setNavBarInteractionMode(overlayManager, NAV_BAR_MODE_2BUTTON_OVERLAY, false);
+                setNavBarInteractionMode(overlayManager, NAV_BAR_MODE_2BUTTON_OVERLAY);
                 Settings.System.putIntForUser(context.getContentResolver(),
                        Settings.System.NAVIGATION_BAR_IME_SPACE, 1, USER_CURRENT);
                 break;
             case KEY_SYSTEM_NAV_3BUTTONS:
-                setNavBarInteractionMode(overlayManager, NAV_BAR_MODE_3BUTTON_OVERLAY, false);
+                setNavBarInteractionMode(overlayManager, NAV_BAR_MODE_3BUTTON_OVERLAY);
                 Settings.System.putIntForUser(context.getContentResolver(),
                        Settings.System.NAVIGATION_BAR_IME_SPACE, 1, USER_CURRENT);
                 break;
@@ -360,12 +346,8 @@ public class SystemNavigationGestureSettings extends RadioButtonPickerFragment {
     }
 
     private static void setNavBarInteractionMode(IOverlayManager overlayManager,
-            String overlayPackage, boolean force) {
+            String overlayPackage) {
         try {
-            if (force) {
-                // disable then enable again
-                overlayManager.setEnabled(overlayPackage, false, USER_CURRENT);
-            }
             overlayManager.setEnabledExclusiveInCategory(overlayPackage, USER_CURRENT);
         } catch (RemoteException e) {
             throw e.rethrowFromSystemServer();

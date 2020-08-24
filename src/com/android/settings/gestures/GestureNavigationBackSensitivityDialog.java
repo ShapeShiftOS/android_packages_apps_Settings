@@ -39,7 +39,6 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
     private boolean mArrowSwitchChecked;
 
     private boolean mGestureHapticChecked;
-    private boolean mShowNavChecked;
     private boolean mNavigationIMESpace;
 
     private static final String TAG = "GestureNavigationBackSensitivityDialog";
@@ -47,11 +46,10 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
     private static final String KEY_BACK_HEIGHT = "back_height";
     private static final String KEY_HOME_HANDLE_SIZE = "home_handle_width";
     private static final String KEY_BACK_BLOCK_IME = "back_block_ime";
-    private static final String KEY_SHOW_NAV = "show_nav";
     private static final String KEY_NAVIGATION_IME_SPACE = "navigation_bar_ime_space";
     private static final String KEY_HOME_HANDLE_HEIGHT = "home_handle_height";
 
-    public static void show(SystemNavigationGestureSettings parent, int sensitivity, int height, int length, boolean blockIme, boolean showNav, boolean imeSpace, int handleHeight) {
+    public static void show(SystemNavigationGestureSettings parent, int sensitivity, int height, int length, boolean blockIme, boolean imeSpace, int handleHeight) {
         if (!parent.isAdded()) {
             return;
         }
@@ -63,7 +61,6 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
         bundle.putInt(KEY_BACK_HEIGHT, height);
         bundle.putInt(KEY_HOME_HANDLE_SIZE, length);
         bundle.putBoolean(KEY_BACK_BLOCK_IME, blockIme);
-        bundle.putBoolean(KEY_SHOW_NAV, showNav);
         bundle.putBoolean(KEY_NAVIGATION_IME_SPACE, imeSpace);
         bundle.putInt(KEY_HOME_HANDLE_HEIGHT, handleHeight);
         dialog.setArguments(bundle);
@@ -108,16 +105,6 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
                 mGestureHapticChecked = GestureHapticSwitch.isChecked() ? true : false;
             }
         });
-        final Switch showNavSwitch = view.findViewById(R.id.show_gestures_navbar);
-        mShowNavChecked = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.GESTURE_NAVBAR_SHOW, 1) == 1;
-        showNavSwitch.setChecked(mShowNavChecked);
-        showNavSwitch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mShowNavChecked = showNavSwitch.isChecked() ? true : false;
-            }
-        });
         final Switch imeSpaceSwitch = view.findViewById(R.id.navigation_bar_ime_space);
         mNavigationIMESpace = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NAVIGATION_BAR_IME_SPACE, 1) == 1;
@@ -139,12 +126,8 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
                     getArguments().putInt(KEY_BACK_SENSITIVITY, sensitivity);
                     int height = seekBarHeight.getProgress();
                     getArguments().putInt(KEY_BACK_HEIGHT, height);
-                    boolean showNav = showNavSwitch.isChecked();
-                    getArguments().putBoolean(KEY_SHOW_NAV, showNav);
                     boolean imeSpace = imeSpaceSwitch.isChecked();
                     getArguments().putBoolean(KEY_NAVIGATION_IME_SPACE, imeSpace);
-                    Settings.System.putInt(getActivity().getContentResolver(),
-                            Settings.System.GESTURE_NAVBAR_SHOW, mShowNavChecked ? 1 : 0);
                     boolean blockIme = blockImeSwitch.isChecked();
                     getArguments().putBoolean(KEY_BACK_BLOCK_IME, blockIme);
                     SystemNavigationGestureSettings.setBackBlockIme(getActivity(), blockIme);
@@ -160,7 +143,6 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
                     int handleHeight = seekBarHandleHeight.getProgress();
                     getArguments().putInt(KEY_HOME_HANDLE_HEIGHT, handleHeight);
                     SystemNavigationGestureSettings.setHomeHandleSize(getActivity(), length);
-                    SystemNavigationGestureSettings.setShowNav(getActivity(), showNav);
                     SystemNavigationGestureSettings.setImeSpace(getActivity(), imeSpace);
                     SystemNavigationGestureSettings.setHomeHandleHeight(getActivity(), handleHeight);
                 })
