@@ -44,6 +44,11 @@
             android:defaultValue="false" />
     </PreferenceCategory>
 
+
+    <PreferenceCategory
+        android:title="@string/vibration_interactions"
+        settings:allowDividerAbove="true">
+
     <!-- Vibrate on touch -->
     <SwitchPreference
         android:key="vibrate_on_touch"
@@ -65,6 +70,8 @@
     <Preference
         android:key="notification_vibration_intensity"
         android:title="@string/vibration_intensity_notification"/>
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="vibration_patterns"

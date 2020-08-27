@@ -265,6 +265,7 @@ Notifications may be delayed for these apps."</string>
     <string name="incall_vibrate_call_wait_summary">Enable to vibrate while call is on waiting</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
     <string name="incall_vibrate_disconnect_summary">Enable to vibrate after call disconnect</string>
+    <string name="vibration_interactions">Vibrate on various events</string>
 
     <!-- Scramble PIN layout on lockscreen -->
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
