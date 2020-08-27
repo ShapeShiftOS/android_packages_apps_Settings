@@ -288,5 +288,9 @@ Notifications may be delayed for these apps."</string>
     <string name="increasing_ring_min_volume_title">Start volume</string>
     <string name="increasing_ring_ramp_up_time_title">Ramp-up time</string>
 
+    <!-- Notification Vibration -->
+    <string name="vibrate_on_notifications_title">Notification vibration</string>
+    <string name="vibrate_on_notifications_summary">Vibrate on notifications</string>
+
 </resources>
 

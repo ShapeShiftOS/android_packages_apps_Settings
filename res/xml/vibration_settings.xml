@@ -55,6 +55,12 @@
         android:title="@string/vibrate_on_touch_title"
         android:summary="@string/vibrate_on_touch_summary"/>
 
+        <com.exui.config.center.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_notifications"
+            android:title="@string/vibrate_on_notifications_title"
+            android:summary="@string/vibrate_on_notifications_summary"
+            android:defaultValue="true" />
+
     <!-- Also vibrate for calls -->
     <SwitchPreference
         android:key="vibrate_when_ringing"
