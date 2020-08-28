@@ -292,5 +292,9 @@ Notifications may be delayed for these apps."</string>
     <string name="vibrate_on_notifications_title">Notification vibration</string>
     <string name="vibrate_on_notifications_summary">Vibrate on notifications</string>
 
+    <!-- low battery notification toggle -->
+    <string name="battery_low_notif_title">Low battery notification</string>
+    <string name="battery_low_notif_summary">Show low battery notification when enabled</string>
+
 </resources>
 
