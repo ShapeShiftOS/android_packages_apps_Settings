@@ -106,7 +106,7 @@
         android:key="increasing_ring_volume"
         android:icon="@drawable/ring_notif_increasing"
         android:dependency="increasing_ring"
-        android:order="-131"
+        android:order="-134"
         settings:controller="com.android.settings.notification.IncreasingRingVolumePreferenceController" />
 
     <!-- Haptics -->
