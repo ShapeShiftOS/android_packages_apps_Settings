@@ -413,9 +413,9 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         updateLastFullChargePreference();
         mScreenUsagePref.setSummary(StringUtil.formatElapsedTime(getContext(),
                 mBatteryUtils.calculateScreenUsageTime(mStatsHelper), false));
-        mCurrentBatteryCapacity.setSubtitle(parseBatterymAhText(mBatCurCap));
-        mDesignedBatteryCapacity.setSubtitle(parseBatterymAhText(mBatDesCap));
-        mBatteryChargeCycles.setSubtitle(parseBatteryCycle(mBatChgCyc));
+        mCurrentBatteryCapacity.setSummary(parseBatterymAhText(mBatCurCap));
+        mDesignedBatteryCapacity.setSummary(parseBatterymAhText(mBatDesCap));
+        mBatteryChargeCycles.setSummary(parseBatteryCycle(mBatChgCyc));
         final long elapsedRealtimeUs = SystemClock.elapsedRealtime() * 1000;
         Intent batteryBroadcast = context.registerReceiver(null,
                 new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
