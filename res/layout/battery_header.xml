@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Copyright (C) 2017 The Android Open Source Project
-
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
-
        http://www.apache.org/licenses/LICENSE-2.0
-
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,43 +14,75 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:id="@+id/battery_entity_header"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:orientation="horizontal"
+    android:orientation="vertical"
+    android:paddingTop="12dp"
+    android:paddingBottom="24dp"
     style="@style/EntityHeader">
 
     <LinearLayout
-        android:layout_width="170dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/battery_percent"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:textAppearance="@style/TextAppearance.EntityHeaderTitle"
-            android:textSize="36sp" />
+            android:layout_marginStart="2dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/summary1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:minLines="3"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"/>
-            android:textColor="?android:attr/textColorPrimary"/>
+            <com.android.settings.fuelgauge.BatteryMeterView
+                android:id="@+id/battery_header_icon"
+                android:layout_marginTop="2dp"
+                android:layout_width="@dimen/battery_meter_width"
+                android:layout_height="@dimen/battery_meter_height"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/battery_percent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textAppearance="@style/TextAppearance.EntityHeaderTitle"
+                    android:textSize="36sp" />
+
+                
+                <TextView
+                    android:id="@+id/summary1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:minLines="3"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+                    android:textColor="?android:attr/textColorPrimary"/>
+
+            </LinearLayout>
+
+      </LinearLayout>
+
 
     </LinearLayout>
 
-    <com.android.settings.fuelgauge.BatteryMeterView
-        android:id="@+id/battery_header_icon"
+    <com.android.settings.widget.UsageView
+        android:id="@+id/battery_usage"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/battery_meter_height"
-        android:layout_gravity="center"/>
+        android:layout_height="151dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginStart="2dp"
+        android:colorAccent="?android:attr/colorAccent"
+        android:gravity="fill_horizontal"
+        settings:textColor="?android:attr/textColorSecondary"/>
 
 </LinearLayout>
