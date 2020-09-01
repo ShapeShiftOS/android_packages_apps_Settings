@@ -182,10 +182,6 @@ public class TopLevelSettings extends DashboardFragment implements
                         aIcon.setForegroundColorAicp(mAccentColor);
                         aIcon.setBackgroundColorAicp(0);
                         break;
-                    case 4:
-                        aIcon.setForegroundColorAicp(mAccentColor);
-                        aIcon.setBackgroundColorAicp(R.color.accent_tint);
-                        break;
                 }
             } else if (icon instanceof LayerDrawable) {
                 LayerDrawable lIcon = (LayerDrawable) icon;
@@ -207,11 +203,6 @@ public class TopLevelSettings extends DashboardFragment implements
                             fg.setTint(mAccentColor);
                             bg.setTint(0);
                             break;
-                       case 4:
-                            fg.setTint(mAccentColor);
-                            bg.setTint(R.color.accent_tint);
-                        break;
-
                     }
                 }
             }

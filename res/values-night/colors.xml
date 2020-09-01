@@ -32,7 +32,5 @@
 
     <color name="settings_panel_background_color">#202124</color> <!-- GM2_grey_900 -->
 
-    <color name="default_tint_colour">?android:attr/colorAccent</color>
-
 </resources>
 
