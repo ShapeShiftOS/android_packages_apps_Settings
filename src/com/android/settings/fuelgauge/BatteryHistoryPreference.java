@@ -89,6 +89,9 @@ public class BatteryHistoryPreference extends Preference {
         if (hideSummary) {
             mSummaryView.setVisibility(View.GONE);
         }
+        UsageView usageView = (UsageView) view.findViewById(R.id.battery_usage);
+        usageView.findViewById(R.id.label_group).setAlpha(.7f);
+        mBatteryInfo.bindHistory(usageView);
         BatteryUtils.logRuntime(TAG, "onBindViewHolder", startTime);
     }
 }

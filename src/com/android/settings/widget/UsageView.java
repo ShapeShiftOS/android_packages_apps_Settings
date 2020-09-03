@@ -79,15 +79,6 @@ public class UsageView extends FrameLayout {
                 View bottomSpace = bottomLabels.findViewById(R.id.bottom_label_space);
                 bottomLabels.removeView(bottomSpace);
                 bottomLabels.addView(bottomSpace);
-            } else if (gravity == Gravity.FILL_HORIZONTAL) {
-                        LinearLayout bottomLabels = findViewById(R.id.bottom_label_group);
-                        View bottomSpace = bottomLabels.findViewById(R.id.bottom_label_space);
-                        bottomLabels.removeView(bottomSpace);
-                        LinearLayout labels = findViewById(R.id.label_group);
-                        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) labels.getLayoutParams();
-                        // Hide the labels without removing them
-                        params.width = 0;
-                        labels.setLayoutParams(params);
             } else if (gravity != Gravity.START) {
                 throw new IllegalArgumentException("Unsupported gravity " + gravity);
             }
