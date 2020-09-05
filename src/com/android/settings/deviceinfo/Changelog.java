@@ -14,7 +14,7 @@
     limitations under the License.
  */
 
-package com.android.settings.changelog;
+package com.android.settings.deviceinfo;
 
 import android.app.Fragment;
 import android.content.res.Resources;
