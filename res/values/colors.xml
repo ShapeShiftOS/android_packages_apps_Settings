@@ -156,4 +156,7 @@
 
     <color name="crvs_dashboard_battery">#00796b</color>
 
+    <color name="settingsHeaderColor">@*android:color/accent_device_default_light</color>
+
+
 </resources>
