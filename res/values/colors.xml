@@ -159,4 +159,6 @@
     <color name="settingsHeaderColor">@*android:color/accent_device_default_light</color>
 
 
+    <color name="alpha_disabled_tile">#0f000000</color>
+
 </resources>
