@@ -67,7 +67,6 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.utils.PowerUtil;
 import com.android.settingslib.utils.StringUtil;
 import com.android.settingslib.widget.LayoutPreference;
-import com.android.internal.util.exui.Utils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
