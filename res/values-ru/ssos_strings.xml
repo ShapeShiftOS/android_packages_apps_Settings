@@ -114,7 +114,7 @@
     <string name="custom_display_cutout_emulation">Эмуляция выреза AOSP</string>
     <!-- Navbar length -->
     <string name="navbar_length">Длина полоски</string>
-    <string name="short_label">Короткая</string>
+    <string name="hidden_label">Спрятана</string>
     <string name="long_label">Длинная</string>
 
 </resources>
