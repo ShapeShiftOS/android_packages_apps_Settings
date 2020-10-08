@@ -21,6 +21,11 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
+    <PreferenceScreen
+        android:layout="@layout/ssos_logo_layout"
+        android:selectable="false"
+        android:key="ssos_logo" />
+
     <!-- Android version -->
     <Preference
         android:key="os_firmware_version"
