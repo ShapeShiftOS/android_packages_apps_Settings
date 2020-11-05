@@ -58,4 +58,8 @@
     <string name="backup_transport_setting_label">Change backup provider</string>
     <string name="backup_transport_title">Select backup provider</string>
 
+    <!-- QSTile requires unlocking before being accessible -->
+    <string name="qstile_requires_unlocking_title">Make secure tiles require unlocking</string>
+    <string name="qstile_requires_unlocking_summary">Some system tiles will require unlocking before you can acccess them from lock screen.</string>
+
 </resources>
