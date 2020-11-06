@@ -65,6 +65,12 @@
         android:summary="@string/show_password_summary"
         settings:controller="com.android.settings.security.ShowPasswordPreferenceController"/>
 
+    <com.ssos.support.preferences.SecureSettingSwitchPreference
+        android:key="qstile_requires_unlocking"
+        android:title="@string/qstile_requires_unlocking_title"
+        android:summary="@string/qstile_requires_unlocking_summary"
+        android:defaultValue="true"/>
+
     <!-- On lock screen notifications -->
     <com.android.settings.RestrictedListPreference
         android:key="privacy_lock_screen_notifications"
