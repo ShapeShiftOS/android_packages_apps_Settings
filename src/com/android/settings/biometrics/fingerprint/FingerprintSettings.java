@@ -66,8 +66,6 @@ import com.android.settingslib.widget.FooterPreference;
 import java.util.HashMap;
 import java.util.List;
 
-import com.android.internal.util.custom.FodUtils;
-
 /**
  * Settings screen for fingerprints
  */
@@ -261,10 +259,6 @@ public class FingerprintSettings extends SubSettings {
             // Don't start authentication if ChooseLockGeneric is showing, otherwise if the user
             // is in FP lockout, a toast will show on top
             if (mLaunchedConfirm) {
-                return;
-            }
-            // Don't listen if has fod support
-            if (FodUtils.hasFodSupport(getContext())){
                 return;
             }
             if (!mInFingerprintLockout) {
