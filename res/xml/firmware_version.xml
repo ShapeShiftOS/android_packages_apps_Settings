@@ -23,7 +23,7 @@
 
     <PreferenceScreen
         android:layout="@layout/ssos_logo_layout"
-        android:selectable="false"
+        android:selectable="true"
         android:key="ssos_logo" />
 
     <!-- Android version -->
