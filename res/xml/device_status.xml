@@ -29,6 +29,16 @@
         android:summary="@string/summary_placeholder"
         settings:controller="com.android.settings.deviceinfo.BrandedAccountPreferenceController"/>
 
+    <!-- Radio info -->
+    <Preference
+        android:title="@string/radio_info_title"
+        android:key="radio_info_settings"
+        android:order="15">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.phone"
+                android:targetClass="com.android.phone.settings.RadioInfo" />
+    </Preference>
+
     <!-- SIM status -->
     <Preference
         android:key="sim_status"
