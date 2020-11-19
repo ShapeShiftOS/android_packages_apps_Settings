@@ -12,65 +12,56 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
     <!-- ShapeShifter -->
     <string name="shapeshifter_title">ShapeShifter</string>
-    <string name="shapeshifter_activity_summary">Настройте свое устройство</string>
-
+    <string name="shapeshifter_activity_summary">Настройте ваше устройство</string>
     <!-- ShapeShiftOS version -->
-    <string name="about_device_name">Кодовое имя ShapeShiftOS </string>
+    <string name="about_device_name">Маркировка ShapeShiftOS</string>
     <string name="ssos_version">Версия ShapeShiftOS</string>
     <string name="build_date">Дата сборки</string>
-
-
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+    <!-- Manage applications, package string displayed in app snippet -->
+    <string name="packagename_text"><xliff:g id="package_name">%1$s</xliff:g></string>
     <!-- Hardware info -->
     <!-- Label for device's hardware platform value [CHAR LIMIT=40] -->
     <string name="platform_revision">Платформа</string>
     <!-- Label for device's hardware ram size [CHAR LIMIT=40] -->
     <string name="total_ram">Всего ОЗУ</string>
-
     <!-- SELinux Status -->
-    <string name="selinux_status">Статус SELinux</string>
-    <string name="selinux_status_disabled">Отключен</string>
-    <string name="selinux_status_permissive">Разрешающий</string>
-    <string name="selinux_status_enforcing">Запрещающий</string>
-
+    <string name="selinux_status">Состояние SELinux</string>
+    <string name="selinux_status_disabled">Отключено</string>
+    <string name="selinux_status_permissive">Permissive (разрешающий)</string>
+    <string name="selinux_status_enforcing">Enforcing (принудительный)</string>
     <!-- Fingerprint location message - default -->
-    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="default">Найдите датчик отпечатков пальцев на передней панели телефона.</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="default">Найдите датчик отпечатков пальцев на левой стороне телефона.</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="default">Найдите датчик отпечатков пальцев на правой стороне телефона.</string>
-
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="default">Найдите датчик отпечатков пальцев на передней панели вашего телефона.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="default">Найдите датчик отпечатков пальцев на левой стороне вашего телефона.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="default">Найдите датчик отпечатков пальцев на правой стороне вашего телефона.</string>
     <!-- Fingerprint location message - generic -->
-    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="device">Найдите датчик отпечатков пальцев на передней панели устройства.</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="device">Найдите датчик отпечатков пальцев на левой стороне устройства.</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="device">Найдите датчик отпечатков пальцев на правой стороне устройства.</string>
-
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="device">Найдите датчик отпечатков пальцев на передней панели вашего устройства.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="device">Найдите датчик отпечатков пальцев на левой стороне вашего устройства.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="device">Найдите датчик отпечатков пальцев на правой стороне вашего устройства.</string>
     <!-- Fingerprint location message - tablet -->
-    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="tablet">Найдите датчик отпечатков пальцев на передней панели планшета.</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="tablet">Найдите датчик отпечатков пальцев на левой стороне планшета.</string>
-    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="tablet">Найдите датчик отпечатков пальцев на правой стороне планшета.</string>
-
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_front" product="tablet">Найдите датчик отпечатков пальцев на передней панели вашего планшета.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_left" product="tablet">Найдите датчик отпечатков пальцев на левой стороне вашего планшета.</string>
+    <string name="security_settings_fingerprint_enroll_find_sensor_message_right" product="tablet">Найдите датчик отпечатка пальца на правой стороне вашего планшета.</string>
     <!-- Title for connected TWS device group [CHAR LIMIT=none]-->
-    <string name="connected_tws_device_saved_title">Сохранитьнаушники</string>
-
+    <string name="connected_tws_device_saved_title">Сохраненные пары</string>
     <!-- Backup Transport selection settings menu and activity title -->
-    <string name="backup_transport_setting_label">Сменить поставщика резервного копирования</string>
-    <string name="backup_transport_title">Выберите поставщика резервного копирования</string>
-
+    <string name="backup_transport_setting_label">Сменить поставщика услуг резервного копирования</string>
+    <string name="backup_transport_title">Выберите поставщика услуг резервного копирования</string>
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">Заблокировать плитки</string>
-    <string name="qstile_requires_unlocking_summary">Некоторые системные плитки потребуют разблокировки, прежде чем вы сможете получить к ним доступ с экрана блокировки.</string>
-
+    <string name="qstile_requires_unlocking_summary">Некоторые системные плитки будут требовать разблокировки, прежде чем вы сможете взаимодействовать с ними на экране блокировки.</string>
     <!-- Doze on charge -->
-    <string name="doze_on_charge_title">Всегда включенный экран при зарядке</string>
-    <string name="doze_on_charge_summary">Показывать Всегда включенный экран все время при зарядке</string>
-
+    <string name="doze_on_charge_title">Всегда включать при зарядке</string>
+    <string name="doze_on_charge_summary">Показывать Doze-экран все время при зарядке</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_screen_title">Адаптивное воспроизведение</string>
-    <string name="adaptive_playback_disabled_summary">Отключен</string>
-    <string name="adaptive_playback_timeout_title">Использовать тайм-аут</string>
-    <string name="adaptive_playback_timeout_none">Нет тайм-аута</string>
-    <string name="adaptive_playback_timeout_none_summary">Вкл. (Без тайм-аута)</string>
+    <string name="adaptive_playback_disabled_summary">Выкл.</string>
+    <string name="adaptive_playback_timeout_title">Использовать таймаут</string>
+    <string name="adaptive_playback_timeout_none">Нет таймаута</string>
+    <string name="adaptive_playback_timeout_none_summary">Вкл. (без таймаута)</string>
     <string name="adaptive_playback_timeout_30_secs">30 секунд</string>
     <string name="adaptive_playback_timeout_30_secs_summary">Вкл. (30 секунд)</string>
     <string name="adaptive_playback_timeout_1_min">1 минута</string>
@@ -81,54 +72,44 @@
     <string name="adaptive_playback_timeout_5_min_summary">Вкл. (5 минут)</string>
     <string name="adaptive_playback_timeout_10_min">10 минут</string>
     <string name="adaptive_playback_timeout_10_min_summary">Вкл. (10 минут)</string>
-    <string name="adaptive_playback_explainer">Адаптивное воспроизведение автоматически приостанавливает воспроизведение мультимедиа при отключении звука и автоматически возобновляет воспроизведение при восстановлении громкости в течение установленного времени.</string>
-
-    <string name="fp_swipe_to_dismiss_notifications_title">Проведите пальцем по отпечатку пальца влево или вправо, чтобы закрыть уведомления</string>
-    <string name="fp_swipe_to_dismiss_notifications_summary">Чтобы закрыть уведомления, проведите пальцем влево или вправо по датчику отпечатков пальцев на задней панели телефона.</string>
-
+    <string name="adaptive_playback_explainer">Адаптивное воспроизведение автоматически приостанавливает медиа когда звук выключен и возобновляет автоматически при восстановлении громкости в течение заданного времени.</string>
+    <string name="fp_swipe_to_dismiss_notifications_title">Очистка уведомлений при помощи смаха влево или вправо по сканеру отпечатков пальцев</string>
+    <string name="fp_swipe_to_dismiss_notifications_summary">Чтобы очистить список уведомлений, проведите пальцем влево или вправо по сенсору отпечатков пальцев на задней панели телефона.</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Быстрая разблокировка</string>
-    <string name="unlock_quick_unlock_control_summary">Автоматическая разблокировка при вводе правильного PIN-кода/пароля</string>
-
+    <string name="unlock_quick_unlock_control_summary">Разблокировать автоматически при вводе правильного PIN-кода/пароля</string>
     <!-- Scramble pin -->
-    <string name="unlock_scramble_pin_layout_title">Перемещать кнопки ввода</string>
-    <string name="unlock_scramble_pin_layout_summary">Перемещать кнпоки ввода PIN-кода при вводе пароля</string>
-
+    <string name="unlock_scramble_pin_layout_title">Перемешать клавиши</string>
+    <string name="unlock_scramble_pin_layout_summary">Перемешать схему PIN-кода при разблокировке устройства</string>
     <!-- Swipe up for face unlock -->
-    <string name="security_settings_face_require_swipe">Проведите вверх, чтобы разблокировать</string>
-    <string name="security_settings_face_require_swipe_summary">Проведите вверх по экрану блокировки, чтобы использовать разблокировку лица</string>
-
+    <string name="security_settings_face_require_swipe">Свайп вверх, чтобы разблокировать</string>
+    <string name="security_settings_face_require_swipe_summary">Свайп вверх на экране блокировки, чтобы использовать разблокировку лицом</string>
     <!-- Per-app data restrictions -->
-    <string name="data_usage_app_restrict_data">Сотовые данные</string>
-    <string name="data_usage_app_restrict_data_summary">Разрешить использование сотовых данных</string>
-    <string name="data_usage_app_restrict_vpn">Данные VPN</string>
-    <string name="data_usage_app_restrict_vpn_summary">Включить использование данных VPN</string>
-    <string name="data_usage_app_restrict_wifi">Данные Wi\u2011Fi</string>
-    <string name="data_usage_app_restrict_wifi_summary">Включить использование данных Wi\u2011Fi</string>
-
+    <string name="data_usage_app_restrict_data">Использование мобильных данных</string>
+    <string name="data_usage_app_restrict_data_summary">Отображать статистику использования мобильных данных</string>
+    <string name="data_usage_app_restrict_vpn">Использование VPN</string>
+    <string name="data_usage_app_restrict_vpn_summary">Отображать статистику использования VPN</string>
+    <string name="data_usage_app_restrict_wifi">Использование Wi\u2011Fi</string>
+    <string name="data_usage_app_restrict_wifi_summary">Отображать статистику использования Wi\u2011Fi</string>
     <!-- About - Easter Egg -->
     <plurals name="show_logo_countdown">
-        <item quantity="one">Ты сейчас в <xliff:g id="count_down_ssos">%1$d</xliff:g> шаге от центра мемов</item>
-        <item quantity="other">Ты сейчас в <xliff:g id="count_down_ssos">%1$d</xliff:g> шагах от центра мемов</item>
+        <item quantity="one">Вы в <xliff:g id="count_down_ssos">%1$d</xliff:g> шаге от центра приколов.</item>
+        <item quantity="few">Вы в <xliff:g id="count_down_ssos">%1$d</xliff:g> шагах от центра приколов.</item>
+        <item quantity="many">Вы в <xliff:g id="count_down_ssos">%1$d</xliff:g> шагах от центра приколов.</item>
+        <item quantity="other">Вы в <xliff:g id="count_down_ssos">%1$d</xliff:g> шагах от центра приколов.</item>
     </plurals>
-    
-
+    <string name="emojii">😳😳😳</string>
     <!-- Ambient music ticker -->
-    <string name="pulse_on_new_tracks_title">Уведомления на Всегда включенном экране</string>
-    <string name="pulse_on_new_tracks_summary">Показывать Всегда включенный при воспроизведении новой музыкальной дорожки. Дважды нажмите на информацию о дорожке, чтобы перейти к следующей дорожке.</string>
-    <string name="pulse_on_new_tracks_soli_summary">Показывать Всегда включенный экран при воспроизведении новой музыкальной дорожки</string>
-
+    <string name="pulse_on_new_tracks_title">Ambient Music Ticker</string>
+    <string name="pulse_on_new_tracks_summary">Показывать Ambient Display при воспроизведении новой музыки. Дважды нажмите на информацию о треке, чтобы перейти к следующему треку.</string>
+    <string name="pulse_on_new_tracks_soli_summary">Показывать Ambient Display при воспроизведении новой музыки</string>
     <!-- Volume rocker gestures -->
     <string name="volume_skiptrack_screen_title">Пропускать музыкальные треки</string>
-    <string name="volume_skiptrack_title">Переключать треки кнопками громкости</string>
-    <string name="volume_skiptrack_summary">Нажмите и удерживайте качельку громкости, чтобы пропустить треки при воспроизведении музыки, даже удаленно на телевизоре или ПК, например Spotify (приложение должно быть запущено уведомление и показывать уведомление).</string>
-
+    <string name="volume_skiptrack_title">Пропускать треки кнопками громкости</string>
+    <string name="volume_skiptrack_summary">Длительное нажатие кнопки громкости для пропуска треков при воспроизведении музыки, даже удаленно на TV или ПК с, например, Spotify (приложение должно работать на телефоне и показывать уведомления).</string>
     <!-- Search keywords for notification history -->
     <string name="keywords_notification_log">уведомления, журнал уведомлений</string>
-
     <!-- String for removal of sensitive info on about, depending on tap -->
-    <string name="device_info_protected_single_press">Нажмите, чтобы показать информацию</string>
-
+    <string name="device_info_protected_single_press">Нажмите для отображения информации</string>
     <string name="custom_display_cutout_emulation">Эмуляция выреза AOSP</string>
-
 </resources>
