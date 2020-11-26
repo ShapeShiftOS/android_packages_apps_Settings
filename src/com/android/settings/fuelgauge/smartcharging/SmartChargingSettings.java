@@ -21,6 +21,12 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.TextView;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
@@ -33,6 +39,7 @@ import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 
 import com.ssos.support.preferences.CustomSeekBarPreference;
+import com.ssos.support.preferences.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +47,8 @@ import java.util.List;
 /**
  * Settings screen for Smart charging
  */
-public class SmartChargingSettings extends DashboardFragment implements OnPreferenceChangeListener {
+public class SmartChargingSettings extends DashboardFragment implements
+        OnPreferenceChangeListener, CompoundButton.OnCheckedChangeListener {
 
     private static final String TAG = "SmartChargingSettings";
     private static final String KEY_SMART_CHARGING_LEVEL = "smart_charging_level";
@@ -48,9 +56,14 @@ public class SmartChargingSettings extends DashboardFragment implements OnPrefer
     private static final String FOOTER = "smart_charging_footer";
     private CustomSeekBarPreference mSmartChargingLevel;
     private CustomSeekBarPreference mSmartChargingResumeLevel;
+    private SystemSettingSwitchPreference mResetStats;
 
     private int mSmartChargingLevelDefaultConfig;
     private int mSmartChargingResumeLevelDefaultConfig;
+
+    private TextView mTextView;
+    private View mSwitchBar;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -74,6 +87,54 @@ public class SmartChargingSettings extends DashboardFragment implements OnPrefer
         mSmartChargingResumeLevel.setOnPreferenceChangeListener(this);
 
         findPreference(FOOTER).setTitle(R.string.smart_charging_footer);
+        mResetStats = (SystemSettingSwitchPreference) findPreference("smart_charging_reset_stats");
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        final View view = LayoutInflater.from(getContext()).inflate(R.layout.master_setting_switch, container, false);
+        ((ViewGroup) view).addView(super.onCreateView(inflater, container, savedInstanceState));
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        boolean enabled = Settings.System.getInt(getContentResolver(),
+                Settings.System.SMART_CHARGING, 0) == 1;
+
+        mTextView = view.findViewById(R.id.switch_text);
+        mTextView.setText(getString(enabled ?
+                R.string.switch_on_text : R.string.switch_off_text));
+
+        mSwitchBar = view.findViewById(R.id.switch_bar);
+        Switch switchWidget = mSwitchBar.findViewById(android.R.id.switch_widget);
+        switchWidget.setChecked(enabled);
+        switchWidget.setOnCheckedChangeListener(this);
+        mSwitchBar.setActivated(enabled);
+        mSwitchBar.setOnClickListener(v -> {
+            switchWidget.setChecked(!switchWidget.isChecked());
+            mSwitchBar.setActivated(switchWidget.isChecked());
+        });
+
+        mSmartChargingLevel.setEnabled(enabled);
+        mSmartChargingResumeLevel.setEnabled(enabled);
+        mResetStats.setEnabled(enabled);
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.SMART_CHARGING, isChecked ? 1 : 0);
+        mTextView.setText(getString(isChecked ? R.string.switch_on_text : R.string.switch_off_text));
+        mSwitchBar.setActivated(isChecked);
+
+        mSmartChargingLevel.setEnabled(isChecked);
+        mSmartChargingResumeLevel.setEnabled(isChecked);
+        mResetStats.setEnabled(isChecked);
     }
 
     @Override
