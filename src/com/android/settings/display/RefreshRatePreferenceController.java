@@ -11,7 +11,7 @@
  * KIND, either express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.android.settings.development;
+package com.android.settings.display;
 
 import android.content.Context;
 import android.provider.Settings;
@@ -29,6 +29,7 @@ public class RefreshRatePreferenceController extends AbstractPreferenceControlle
     private static final String KEY_REFRESH_RATE = "refresh_rate_setting";
 
     private ListPreference mRefreshRate;
+    private int mMaxRefreshRate;
 
     public RefreshRatePreferenceController(Context context) {
         super(context);
@@ -53,9 +54,22 @@ public class RefreshRatePreferenceController extends AbstractPreferenceControlle
         mRefreshRate = (ListPreference) screen.findPreference(KEY_REFRESH_RATE);
         int refreshRate = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.REFRESH_RATE_SETTING, 0);
+        mMaxRefreshRate = mContext.getResources().getInteger(
+                com.android.internal.R.integer.config_maxRefreshRate);
+
+        CharSequence[] m90HzEntries = { mContext.getResources().getString(R.string.auto_refresh_rate),
+                mContext.getResources().getString(R.string.refresh_rate_60),
+                mContext.getResources().getString(R.string.refresh_rate_90) };
+        CharSequence[] m120HzEntries = { mContext.getResources().getString(R.string.auto_refresh_rate),
+                mContext.getResources().getString(R.string.refresh_rate_60),
+                mContext.getResources().getString(R.string.refresh_rate_120) };
+        CharSequence[] mRefreshRateValues = {"0", "1" , "2"};
+
+        mRefreshRate.setEntries(mMaxRefreshRate == 90 ? m90HzEntries : m120HzEntries);
+        mRefreshRate.setEntryValues(mRefreshRateValues);
         mRefreshRate.setValue(String.valueOf(refreshRate));
         mRefreshRate.setOnPreferenceChangeListener(this);
-        updateRefreshRate(refreshRate);
+        updateRefreshRateSummary(refreshRate);
     }
 
     @Override
@@ -63,42 +77,23 @@ public class RefreshRatePreferenceController extends AbstractPreferenceControlle
         int refreshRate = Integer.valueOf((String) newValue);
         Settings.System.putInt(mContext.getContentResolver(),
                 Settings.System.REFRESH_RATE_SETTING, refreshRate);
-        updateRefreshRate(refreshRate);
-        return true;
-    }
-
-    public void updateRefreshRate(int refreshRate) {
-        switch (refreshRate) {
-            case 0:
-            default:
-                Settings.System.putInt(mContext.getContentResolver(),
-                        Settings.System.PEAK_REFRESH_RATE, 90);
-                Settings.System.putInt(mContext.getContentResolver(),
-                        Settings.System.MIN_REFRESH_RATE, 60);
-                break;
-            case 1:
-                Settings.System.putInt(mContext.getContentResolver(),
-                        Settings.System.PEAK_REFRESH_RATE, 60);
-                Settings.System.putInt(mContext.getContentResolver(),
-                        Settings.System.MIN_REFRESH_RATE, 60);
-                break;
-            case 2:
-                Settings.System.putInt(mContext.getContentResolver(),
-                        Settings.System.PEAK_REFRESH_RATE, 90);
-                Settings.System.putInt(mContext.getContentResolver(),
-                        Settings.System.MIN_REFRESH_RATE, 90);
-                break;
-        }
         updateRefreshRateSummary(refreshRate);
+        return true;
     }
 
     public void updateRefreshRateSummary(int refreshRate) {
         if (refreshRate == 1) {
             mRefreshRate.setSummary(R.string.refresh_rate_summary_60);
         } else if (refreshRate == 2) {
-            mRefreshRate.setSummary(R.string.refresh_rate_summary_90);
+            if (mMaxRefreshRate == 90)
+                mRefreshRate.setSummary(R.string.refresh_rate_summary_90);
+            else
+                mRefreshRate.setSummary(R.string.refresh_rate_summary_120);
         } else {
-            mRefreshRate.setSummary(R.string.refresh_rate_summary_auto);
+            if (mMaxRefreshRate == 90)
+                mRefreshRate.setSummary(R.string.refresh_rate_summary_auto_90);
+            else
+                mRefreshRate.setSummary(R.string.refresh_rate_summary_auto_120);
         }
     }
 }
