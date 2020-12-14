@@ -284,7 +284,8 @@
     <string name="show_clipboard_toast_summary">Display a toast when an app tries to access the clipboard</string>
 
     <!-- Battery stats reset -->
-    <string name="battery_stats_reset">Reset stats</string>
-    <string name="battery_stats_message">Battery history stats are going to be reset</string>
+    <string name="battery_stats_reset">Clear usage data?</string>
+    <string name="battery_stats_message">Battery usage data will be lost</string>
+    <string name="battery_stats_clear">@string/proxy_clear_text</string>
 
 </resources>
