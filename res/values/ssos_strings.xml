@@ -216,4 +216,10 @@
     <string name="prevent_ringing_option_mute_no_media">Mute, no media</string>
     <string name="prevent_ringing_option_mute_no_media_summary">On (mute, no media)</string>
 
+    <!-- Aggressive battery -->
+    <string name="aggressive_idle_title">Extended idle</string>
+    <string name="aggressive_idle_summary">Reduce device wake ups and reduce the time required to enter idle state</string>
+    <string name="aggressive_standby_title">Aggressive standby</string>
+    <string name="aggressive_standby_summary">Restrict apps from running in background</string>
+
 </resources>
