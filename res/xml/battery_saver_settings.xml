@@ -20,6 +20,12 @@
     android:title="@string/battery_saver">
 
     <Preference
+        android:key="aggressive_battery_saver_category"
+        android:title="@string/aggressive_battery_saver_title"
+        android:summary="@string/aggressive_battery_saver_summary"
+        android:fragment="com.ssos.shapeshifter.fragments.system_misc.AggressiveBatterySaver" />
+
+    <Preference
         android:key="battery_saver_schedule"
         android:fragment="com.android.settings.fuelgauge.batterysaver.BatterySaverScheduleSettings"
         android:title="@string/battery_saver_schedule_settings_title"

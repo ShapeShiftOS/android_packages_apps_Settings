@@ -217,6 +217,7 @@
     <string name="prevent_ringing_option_mute_no_media_summary">On (mute, no media)</string>
 
     <!-- Aggressive battery -->
+    <string name="aggressive_battery_saver_summary">Extend your battery life in critical moments when you need to make it last</string>
     <string name="aggressive_idle_title">Extended idle</string>
     <string name="aggressive_idle_summary">Reduce device wake ups and reduce the time required to enter idle state</string>
     <string name="aggressive_standby_title">Aggressive standby</string>
