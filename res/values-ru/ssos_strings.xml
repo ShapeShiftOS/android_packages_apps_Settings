@@ -112,4 +112,9 @@
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">Нажмите для отображения информации</string>
     <string name="custom_display_cutout_emulation">Эмуляция выреза AOSP</string>
+    <!-- Navbar length -->
+    <string name="navbar_length">Длина полоски</string>
+    <string name="short_label">Короткая</string>
+    <string name="long_label">Длинная</string>
+
 </resources>
