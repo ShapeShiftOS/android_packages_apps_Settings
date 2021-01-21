@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright (C) 2021 ShapeShiftOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.deviceinfo.aboutphone;
+package com.android.settings.deviceinfo;
 
 import android.app.Activity;
 import android.app.settings.SettingsEnums;
@@ -52,13 +52,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class MyDeviceInfoFragment extends DashboardFragment
-        implements DeviceNamePreferenceController.DeviceNamePreferenceHost {
+public class LegalCrapFragment extends DashboardFragment {
 
-    private static final String LOG_TAG = "MyDeviceInfoFragment";
-    //private static final String KEY_MY_DEVICE_INFO_HEADER = "my_device_info_header";
+    private static final String LOG_TAG = "LegalCrapFragment";
 
-    private BuildNumberPreferenceController mBuildNumberPreferenceController;
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
 
     @Override
     public int getMetricsCategory() {
@@ -71,17 +72,8 @@ public class MyDeviceInfoFragment extends DashboardFragment
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        use(DeviceNamePreferenceController.class).setHost(this /* parent */);
-        mBuildNumberPreferenceController = use(BuildNumberPreferenceController.class);
-        mBuildNumberPreferenceController.setHost(this /* parent */);
-    }
-
-    @Override
     public void onStart() {
         super.onStart();
-        //initHeader();
     }
 
     @Override
@@ -91,7 +83,7 @@ public class MyDeviceInfoFragment extends DashboardFragment
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.my_device_info;
+        return R.xml.legal_crap;
     }
 
     @Override
@@ -100,71 +92,24 @@ public class MyDeviceInfoFragment extends DashboardFragment
     }
 
     private static List<AbstractPreferenceController> buildPreferenceControllers(
-            Context context, MyDeviceInfoFragment fragment, Lifecycle lifecycle) {
+            Context context, LegalCrapFragment fragment, Lifecycle lifecycle) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new RegulatoryInfoPreferenceController(context));
         controllers.add(new SafetyInfoPreferenceController(context));
-        controllers.add(new ShapeShiftInfoPreferenceController(context));
         return controllers;
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (mBuildNumberPreferenceController.onActivityResult(requestCode, resultCode, data)) {
-            return;
-        }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    /*private void initHeader() {
-        // TODO: Migrate into its own controller.
-        final LayoutPreference headerPreference =
-                getPreferenceScreen().findPreference(KEY_MY_DEVICE_INFO_HEADER);
-        final boolean shouldDisplayHeader = getContext().getResources().getBoolean(
-                R.bool.config_show_device_header_in_device_info);
-        headerPreference.setVisible(shouldDisplayHeader);
-        if (!shouldDisplayHeader) {
-            return;
-        }
-        final View headerView = headerPreference.findViewById(R.id.entity_header);
-        final Activity context = getActivity();
-        final Bundle bundle = getArguments();
-        final EntityHeaderController controller = EntityHeaderController
-                .newInstance(context, this, headerView)
-                .setRecyclerView(getListView(), getSettingsLifecycle())
-                .setButtonActions(EntityHeaderController.ActionType.ACTION_NONE,
-                        EntityHeaderController.ActionType.ACTION_NONE);
-
-        // TODO: There may be an avatar setting action we can use here.
-        final int iconId = bundle.getInt("icon_id", 0);
-        if (iconId == 0) {
-            final UserManager userManager = (UserManager) getActivity().getSystemService(
-                    Context.USER_SERVICE);
-            final UserInfo info = Utils.getExistingUser(userManager,
-                    android.os.Process.myUserHandle());
-            controller.setLabel(info.name);
-            controller.setIcon(
-                    com.android.settingslib.Utils.getUserIcon(getActivity(), userManager, info));
-        }
-
-        controller.done(context, true /* rebindActions *//*);
-    }*/
-
-    @Override
-    public void showDeviceNameWarningDialog(String deviceName) {
-        DeviceNameWarningDialog.show(this);
-    }
-
-    public void onSetDeviceNameConfirm(boolean confirm) {
-        final DeviceNamePreferenceController controller = use(DeviceNamePreferenceController.class);
-        controller.updateDeviceName(confirm);
-    }
 
     /**
      * For Search.
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.my_device_info) {
+            new BaseSearchIndexProvider(R.xml.legal_crap) {
 
                 @Override
                 public List<AbstractPreferenceController> createPreferenceControllers(
