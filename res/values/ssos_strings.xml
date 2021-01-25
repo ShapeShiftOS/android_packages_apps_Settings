@@ -187,18 +187,6 @@
     <string name="battery_saver_vib_title">Enable haptic feedback during battery saver</string>
     <string name="battery_saver_vib_summary">Toggle to enable vibrations when battery saver is active</string>
 
-    <!-- Refresh rate -->
-    <string name="refresh_rate_title">Screen refresh rate</string>
-    <string name="auto_refresh_rate">Auto</string>
-    <string name="refresh_rate_60">60Hz</string>
-    <string name="refresh_rate_90">90Hz</string>
-    <string name="refresh_rate_120">120Hz</string>
-    <string name="refresh_rate_summary_60">Standard refresh rate (60Hz)\nLess smoothness but slightly extended battery life</string>
-    <string name="refresh_rate_summary_auto_90">Auto (60-90Hz)\nAutomatically switch to high refresh rate on some contents</string>
-    <string name="refresh_rate_summary_90">High refresh rate (90Hz)\nMaximum smoothness but slightly less battery life</string>
-    <string name="refresh_rate_summary_auto_120">Auto (60-120Hz)\nAutomatically switch to high refresh rate on some contents</string>
-    <string name="refresh_rate_summary_120">High refresh rate (90Hz)\nMaximum smoothness but slightly less battery life</string>
-
     <!-- Lock screen pattern size -->
     <string name="lock_pattern_size_3" translatable="false">3 \u00d7 3</string>
     <string name="lock_pattern_size_4" translatable="false">4 \u00d7 4</string>
