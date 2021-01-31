@@ -279,4 +279,7 @@
     <string name="legal_crap_settings">Legal information</string>
     <string name="legal_crap_summary">Privacy policy, agreements, etc</string>
 
+    <!-- Clipboard toast toggle -->
+    <string name="show_clipboard_toast">Show clipboard access alerts</string>
+    <string name="show_clipboard_toast_summary">Display a toast when an app tries to access the clipboard</string>
 </resources>
