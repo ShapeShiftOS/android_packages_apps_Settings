@@ -243,4 +243,7 @@ public class Settings extends SettingsActivity {
     // ShapeShiftOS Settings
     public static class ShapeShifterSettingsActivity extends SettingsActivity {}
     public static class SmartPixelsActivity extends SettingsActivity {}
+
+    // Gaming mode
+    public static class GamingModeActivity extends SettingsActivity {}
 }

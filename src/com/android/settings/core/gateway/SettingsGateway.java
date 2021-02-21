@@ -161,6 +161,7 @@ import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSetting
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.ssos.shapeshifter.ShapeShifterSettings;
+import com.ssos.shapeshifter.fragments.system_misc.gaming.GamingMode;
 import com.ssos.shapeshifter.fragments.system_misc.SmartPixels;
 
 public class SettingsGateway {
@@ -312,6 +313,7 @@ public class SettingsGateway {
             InteractAcrossProfilesDetails.class.getName(),
             MediaControlsSettings.class.getName(),
             ShapeShifterSettings.class.getName(),
+            GamingMode.class.getName(),
             SmartPixels.class.getName(),
     };
 
@@ -354,6 +356,7 @@ public class SettingsGateway {
             UserBackupSettingsActivity.class.getName(),
             // ShapeShiftOS
             Settings.ShapeShifterSettingsActivity.class.getName(),
+            Settings.GamingModeActivity.class.getName(),
             Settings.SmartPixelsActivity.class.getName(),
     };
 }
