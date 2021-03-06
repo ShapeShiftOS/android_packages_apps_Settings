@@ -96,8 +96,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     BatteryInfo mBatteryInfo;
 
     @VisibleForTesting
-    BatteryHeaderPreferenceController mBatteryHeaderPreferenceController;
-    @VisibleForTesting
     boolean mNeedUpdateBatteryTip;
     @VisibleForTesting
     BatteryTipPreferenceController mBatteryTipPreferenceController;
@@ -121,7 +119,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
                 @Override
                 public void onLoadFinished(Loader<BatteryInfo> loader, BatteryInfo batteryInfo) {
-                    mBatteryHeaderPreferenceController.updateHeaderPreference(batteryInfo);
                     mBatteryInfo = batteryInfo;
                     updateLastFullChargePreference();
                 }
@@ -199,11 +196,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     public void onAttach(Context context) {
         super.onAttach(context);
         final SettingsActivity activity = (SettingsActivity) getActivity();
-
-        mBatteryHeaderPreferenceController = use(BatteryHeaderPreferenceController.class);
-        mBatteryHeaderPreferenceController.setActivity(activity);
-        mBatteryHeaderPreferenceController.setFragment(this);
-        mBatteryHeaderPreferenceController.setLifecycle(getSettingsLifecycle());
 
         mBatteryTipPreferenceController = use(BatteryTipPreferenceController.class);
         mBatteryTipPreferenceController.setActivity(activity);
@@ -428,15 +420,6 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         showBothEstimates();
         view.setOnLongClickListener(null);
         return true;
-    }
-
-    @Override
-    protected void restartBatteryStatsLoader(@BatteryUpdateType int refreshType) {
-        super.restartBatteryStatsLoader(refreshType);
-        // Update battery header if battery is present.
-        if (mIsBatteryPresent) {
-            mBatteryHeaderPreferenceController.quickUpdateHeaderPreference();
-        }
     }
 
     @Override
