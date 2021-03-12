@@ -99,10 +99,6 @@
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
     <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
 
-    <!-- Swipe up for face unlock -->
-    <string name="security_settings_face_require_swipe">Swipe up to unlock</string>
-    <string name="security_settings_face_require_swipe_summary">Swipe up on the lockscreen to use face unlock</string>
-
     <!-- About - Easter Egg -->
     <plurals name="show_logo_countdown">
         <item quantity="one">You are now <xliff:g id="count_down_ssos">%1$d</xliff:g> step away from meme center.</item>
