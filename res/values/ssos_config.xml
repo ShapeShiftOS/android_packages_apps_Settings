@@ -27,13 +27,13 @@
     <!-- Whether to show Selinux status in Settings -->
     <bool name="config_showSelinuxStatus">true</bool>
 
-    <!-- Whether to show min refresh rate in display settings -->
-    <bool name="config_show_min_refresh_rate_switch">false</bool>
+    <!-- Whether to show min/max refresh rate in display settings -->
+    <bool name="config_show_refresh_rate_controls">false</bool>
 
     <!-- Smart Charging -->
     <bool name="config_supportSmartCharging">false</bool>
-     
+
     <!-- Screen off FOD -->
-    <bool name="config_supportScreenOffFod">false</bool>     
+    <bool name="config_supportScreenOffFod">false</bool>
 
 </resources>
