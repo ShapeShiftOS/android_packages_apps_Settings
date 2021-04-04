@@ -125,10 +125,6 @@
     <!-- Cutout emulation -->
     <string name="custom_display_cutout_emulation">AOSP Cutout Emulation</string>
 
-    <!-- Double Tap on Doze to wake -->
-    <string name="double_tap_on_doze_to_wake_title">Double-tap to wake on doze</string>
-    <string name="double_tap_on_doze_to_wake_summary">Double tap to wake when device is dreaming</string>
-
     <!-- Notification sound timeout -->
     <string name="app_notification_sound_timeout_title">Minimum time between notification sounds</string>
     <string name="app_notification_sound_timeout_summary_template">Allow sounds or vibration no more than once every <xliff:g id="duration">%1$s</xliff:g></string>
@@ -231,11 +227,6 @@
     <!-- Ambient display battery percentage -->
     <string name="ambient_battery_percent_title">Battery level on bottom</string>
     <string name="ambient_battery_percent_summary">Enable to show battery percent while dozing</string>
-
-    <!-- Doze on double tap -->
-    <string name="double_tap_title">Double tap</string>
-    <string name="doze_double_tap_title">Double tap to check phone</string>
-    <string name="doze_double_tap_summary">Pulse notifications by a double tap</string>
 
     <!-- Volume link notification -->
     <string name="volume_link_notification_title">Link ring &amp; notification volumes</string>
