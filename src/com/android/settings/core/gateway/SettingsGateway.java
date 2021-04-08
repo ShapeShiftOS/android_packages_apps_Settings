@@ -165,7 +165,6 @@ import com.android.settings.wifi.tether.WifiTetherSettings;
 import com.ssos.shapeshifter.ShapeShifterSettings;
 import com.ssos.shapeshifter.fragments.system_misc.gaming.GamingMode;
 import com.ssos.shapeshifter.fragments.system_misc.SmartPixels;
-import com.android.settings.livedisplay.LiveDisplaySettings;
 
 public class SettingsGateway {
 
@@ -320,7 +319,6 @@ public class SettingsGateway {
             ShapeShifterSettings.class.getName(),
             GamingMode.class.getName(),
             SmartPixels.class.getName(),
-            LiveDisplaySettings.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
