@@ -449,4 +449,7 @@
     <string name="doze_double_tap_title">Double tap to check phone</string>
     <string name="doze_double_tap_summary">Pulse notifications by a double tap</string>
 
+    <!-- Battery saver -->
+    <string name="battery_saver_is_enabled">Battery saver is enabled</string>
+
 </resources>
