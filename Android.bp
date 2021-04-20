@@ -67,6 +67,7 @@ android_library {
         "VendorSupport-preference",
         "vendor.lineage.fastcharge-V1.0-java",
         "faceunlock_framework",
+        "androidx.dynamicanimation_dynamicanimation",
     ],
 
     libs: [
