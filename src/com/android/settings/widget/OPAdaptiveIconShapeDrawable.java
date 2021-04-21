@@ -17,13 +17,16 @@
 package com.android.settings.widget;
 
 import android.content.res.Resources;
+import android.content.res.Resources.Theme;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.PathShape;
 import android.util.AttributeSet;
 import android.util.PathParser;
+
 import java.io.IOException;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -38,13 +41,14 @@ public class OPAdaptiveIconShapeDrawable extends ShapeDrawable {
     }
 
     @Override
-    public void inflate(Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) throws XmlPullParserException, IOException {
-        super.inflate(resources, xmlPullParser, attributeSet, theme);
-        init(resources);
+    public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs, Theme theme) throws XmlPullParserException, IOException {
+        super.inflate(r, parser, attrs, theme);
+        init(r);
     }
 
     private void init(Resources resources) {
-        Path path = new Path(PathParser.createPathFromPathData(resources.getString(com.android.internal.R.string.config_icon_mask)));
+        Path path = new Path(PathParser.createPathFromPathData(
+                resources.getString(com.android.internal.R.string.config_icon_mask)));
         getPaint().setAntiAlias(true);
         getPaint().setStyle(Paint.Style.STROKE);
         getPaint().setStrokeWidth(3.0f);
