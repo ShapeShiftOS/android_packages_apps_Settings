@@ -25,5 +25,6 @@
     <color name="oneplus_homepage_icon_background">#ffffff</color>
     <color name="oneplus_accent_color">@color/settingsHeaderColor</color>
     <color name="settings_accent_color">@color/oneplus_accent_color</color>
+    <color name="oos_bg_of_card">#f1f1f1</color>
 
 </resources>
