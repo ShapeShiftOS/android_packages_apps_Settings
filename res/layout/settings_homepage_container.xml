@@ -23,11 +23,15 @@
 
     <com.android.settings.edgeeffect.SpringNestScrollView
         android:layout_width="fill_parent"
+        android:scrollbarThumbVertical="@android:color/transparent"  
+        android:scrollbarThumbHorizontal="@android:color/transparent"
         android:layout_height="fill_parent">
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/main_content_scrollable_container"
             android:layout_width="fill_parent"
+    	    android:scrollbarThumbVertical="@android:color/transparent"  
+    	    android:scrollbarThumbHorizontal="@android:color/transparent"
             android:layout_height="fill_parent"
             app:layout_behavior="com.android.settings.widget.FloatingAppBarScrollingViewBehavior">
 
