@@ -106,10 +106,10 @@
         settings:controller="com.android.settings.gestures.AdaptivePlaybackParentPreferenceController" />
 
     <Preference
-        android:key="power_button_torch_summary"
-        android:title="@string/power_button_torch_title"
-        android:fragment="com.android.settings.gestures.PowerButtonTorchSettings"
-        settings:controller="com.android.settings.gestures.PowerButtonTorchGesturePreferenceController" />
+        android:key="gesture_power_menu_summary"
+        android:title="@string/power_menu_setting_name"
+        android:fragment="com.android.settings.gestures.PowerMenuSettings"
+        settings:controller="com.android.settings.gestures.PowerMenuPreferenceController" />
 
     <Preference
         android:key="gesture_volume_skiptrack_summary"
@@ -128,11 +128,5 @@
             android:targetPackage="com.android.touch.gestures"
             android:targetClass="com.android.touch.gestures.TouchscreenGestureSettings" />
     </Preference>
-
-    <Preference
-        android:key="gesture_power_menu_summary"
-        android:title="@string/power_menu_setting_name"
-        android:fragment="com.android.settings.gestures.PowerMenuSettings"
-        settings:controller="com.android.settings.gestures.PowerMenuPreferenceController" />
 
 </PreferenceScreen>
