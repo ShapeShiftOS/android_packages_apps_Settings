@@ -477,4 +477,8 @@
     <!-- Radio Info -->
     <string name="radio_info_title">Radio info</string>
 
+    <!-- Battery header -->
+    <string name="oneplus_battery_header_title">^1%</string>
+    <string name="oneplus_battery_menu_stats_total">View detailed usage</string>
+
 </resources>

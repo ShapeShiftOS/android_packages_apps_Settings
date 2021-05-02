@@ -52,6 +52,12 @@
         <item name="android:fontFamily">@*android:string/config_headlineFontFamilyMedium</item>
     </style>
 
+    <style name="op_control_text_style_h2" parent="@style/op_control_text_style_base">
+        <item name="android:textSize">48.0sp</item>
+        <item name="android:lineSpacingMultiplier">@dimen/op_line_space_multiplier_h2</item>
+        <item name="android:fontFamily">@*android:string/config_headlineFontFamily</item>
+    </style>
+
     <style name="op_control_text_style_subtitle" parent="@style/op_control_text_style_base">
         <item name="android:textSize">13.0sp</item>
         <item name="android:fontFamily">@*android:string/config_lightFontFamily</item>

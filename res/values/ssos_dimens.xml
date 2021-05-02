@@ -76,4 +76,7 @@
     <dimen name="dashboard_tile_foreground_image_size">@dimen/op_control_icon_size_indicator</dimen>
     <dimen name="op_control_icon_size_indicator">16.0dip</dimen>
 
+    <!-- OnePlus fonts -->
+    <dimen name="op_line_space_multiplier_h2">0.8</dimen>
+
 </resources>

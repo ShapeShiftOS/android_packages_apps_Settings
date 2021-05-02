@@ -21,6 +21,8 @@
     <color name="op_control_text_color_secondary">@color/op_control_text_color_secondary_light</color>
     <color name="op_control_text_color_secondary_light">#66000000</color>
 
+    <color name="op_control_accent_color_green">#ff0bd270</color>
+
     <!-- OnePlus Dashboard -->
     <color name="oneplus_homepage_icon_background">#ffffff</color>
     <color name="oneplus_accent_color">@color/settingsHeaderColor</color>
