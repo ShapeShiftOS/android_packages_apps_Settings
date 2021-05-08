@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <resources>
 
+    <!-- AICP additions-->
     <color name="homepage_aicpextras_background">#ffab00</color>
-
     <color name="homepage_container_bg">@android:color/transparent</color>
-
     <color name="homepage_background_dark">@*android:color/primary_dark_device_default_settings</color>
     <color name="searchbar_background_dark">@*android:color/primary_dark_device_default_settings</color>
 
@@ -21,7 +19,9 @@
     <color name="op_control_text_color_secondary">@color/op_control_text_color_secondary_light</color>
     <color name="op_control_text_color_secondary_light">#66000000</color>
 
+    <!-- OnePlus elements -->
     <color name="op_control_accent_color_green">#ff0bd270</color>
+    <color name="op_control_donut_view_meter_background_color">@*android:color/black</color>
 
     <!-- OnePlus Dashboard -->
     <color name="oneplus_homepage_icon_background">#ffffff</color>

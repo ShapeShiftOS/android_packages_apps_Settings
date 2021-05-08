@@ -79,4 +79,8 @@
     <!-- OnePlus fonts -->
     <dimen name="op_line_space_multiplier_h2">0.8</dimen>
 
+    <!-- Storage donut -->
+    <dimen name="oneplus_settings_storage_summary_donut_margin_top">22dp</dimen>
+    <dimen name="oneplus_settings_storage_summary_donut_padding_bottom">26dp</dimen>
+
 </resources>

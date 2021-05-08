@@ -47,16 +47,14 @@ public class StorageSummaryDonutPreference extends Preference implements View.On
     public StorageSummaryDonutPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        setLayoutResource(R.layout.storage_summary_donut);
+        setLayoutResource(R.layout.op_storage_summary_donut);
         setEnabled(false);
     }
 
     public void setPercent(long usedBytes, long totalBytes) {
-        if (totalBytes == 0) {
-            return;
+        if (totalBytes != 0) {
+            mPercent = usedBytes / (double) totalBytes;
         }
-
-        mPercent = usedBytes / (double) totalBytes;
     }
 
     @Override
