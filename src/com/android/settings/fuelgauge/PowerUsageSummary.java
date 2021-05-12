@@ -58,6 +58,8 @@ import com.android.settingslib.widget.LayoutPreference;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 
+import com.ssos.support.preferences.SystemSettingMasterSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -238,7 +240,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
         updateBatteryTipFlag(icicle);
 
         // Check availability of Smart Charging
-        Preference mSmartCharging = (Preference) findPreference("smart_charging_key");
+        SystemSettingMasterSwitchPreference mSmartCharging = (SystemSettingMasterSwitchPreference) findPreference("smart_charging");
         if (!getResources().getBoolean(R.bool.config_supportSmartCharging)) {
             getPreferenceScreen().removePreference(mSmartCharging);
         }
