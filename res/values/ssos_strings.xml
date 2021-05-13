@@ -481,4 +481,7 @@
     <string name="oneplus_battery_header_title">^1%</string>
     <string name="oneplus_battery_menu_stats_total">View detailed usage</string>
 
+    <!-- One shot automatic Brightness -->
+    <string name="auto_brightness_one_shot_title">Only apply when screen is turned on</string>
+    <string name="auto_brightness_one_shot_summary">Adjustment will occur one time</string>
 </resources>
