@@ -52,7 +52,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.preference.Preference;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.network.ProxySubscriptionManager;
 

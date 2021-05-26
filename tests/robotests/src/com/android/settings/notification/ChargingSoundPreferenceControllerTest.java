@@ -28,7 +28,7 @@ import android.provider.Settings.Secure;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import org.junit.Before;
 import org.junit.Test;

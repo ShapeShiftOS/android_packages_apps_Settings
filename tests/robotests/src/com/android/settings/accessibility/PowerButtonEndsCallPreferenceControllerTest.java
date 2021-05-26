@@ -21,7 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import android.content.Context;
 import android.provider.Settings;
 
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.testutils.shadow.ShadowKeyCharacterMap;

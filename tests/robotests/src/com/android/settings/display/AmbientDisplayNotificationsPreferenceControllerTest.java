@@ -33,7 +33,7 @@ import android.hardware.display.AmbientDisplayConfiguration;
 import android.os.UserHandle;
 import android.provider.Settings;
 
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.testutils.shadow.ShadowSecureSettings;
 import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;

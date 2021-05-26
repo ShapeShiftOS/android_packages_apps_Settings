@@ -38,7 +38,7 @@ import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
 import androidx.preference.ListPreference;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;

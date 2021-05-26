@@ -23,7 +23,7 @@ import android.content.Intent;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import org.junit.Before;
 import org.junit.Test;

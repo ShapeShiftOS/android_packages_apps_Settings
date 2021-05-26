@@ -26,7 +26,7 @@ import android.view.InputDevice;
 import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.core.BasePreferenceController;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
@@ -42,7 +42,7 @@ public class KeyboardLayoutPickerController extends BasePreferenceController imp
         InputManager.InputDeviceListener, LifecycleObserver, OnStart, OnStop {
 
     private final InputManager mIm;
-    private final Map<SwitchPreference, KeyboardLayout> mPreferenceMap;
+    private final Map<com.ssos.support.preferences.SwitchPreference, KeyboardLayout> mPreferenceMap;
 
     private Fragment mParent;
     private int mInputDeviceId;
@@ -143,7 +143,7 @@ public class KeyboardLayoutPickerController extends BasePreferenceController imp
                 mInputDeviceIdentifier);
         Arrays.sort(enabledKeyboardLayouts);
 
-        for (Map.Entry<SwitchPreference, KeyboardLayout> entry : mPreferenceMap.entrySet()) {
+        for (Map.Entry<com.ssos.support.preferences.SwitchPreference, KeyboardLayout> entry : mPreferenceMap.entrySet()) {
             entry.getKey().setChecked(Arrays.binarySearch(enabledKeyboardLayouts,
                     entry.getValue().getDescriptor()) >= 0);
         }

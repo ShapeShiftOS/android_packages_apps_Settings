@@ -22,7 +22,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 
 import androidx.preference.Preference;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.overlay.FeatureFactory;

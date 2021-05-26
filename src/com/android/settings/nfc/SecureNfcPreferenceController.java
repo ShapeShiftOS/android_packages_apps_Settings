@@ -19,7 +19,7 @@ import android.content.Context;
 import android.nfc.NfcAdapter;
 
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.core.TogglePreferenceController;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;

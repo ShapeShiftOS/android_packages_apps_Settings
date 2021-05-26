@@ -33,7 +33,7 @@
         android:summary="summary_1"
         settings:keywords="keywords1, keywords2, keywords3" />
 
-    <SwitchPreference
+    <com.ssos.support.preferences.SwitchPreference
         android:key="pref_key_2"
         android:title="pref_title_2"
         android:summary="summary_2"

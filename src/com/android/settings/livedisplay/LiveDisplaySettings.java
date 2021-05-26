@@ -25,7 +25,7 @@ import android.hardware.display.ColorDisplayManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;

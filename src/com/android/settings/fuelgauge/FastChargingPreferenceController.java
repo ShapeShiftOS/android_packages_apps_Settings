@@ -21,7 +21,7 @@ import android.os.RemoteException;
 import android.util.Log;
 
 import androidx.preference.Preference;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.core.BasePreferenceController;
 

@@ -40,7 +40,7 @@ import android.util.FeatureFlagUtils;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.preference.Preference;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.core.FeatureFlags;
 

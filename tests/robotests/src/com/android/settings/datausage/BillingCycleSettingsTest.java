@@ -44,7 +44,7 @@ import android.os.Bundle;
 import androidx.fragment.app.FragmentActivity;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.testutils.shadow.ShadowFragment;
 import com.android.settingslib.NetworkPolicyEditor;

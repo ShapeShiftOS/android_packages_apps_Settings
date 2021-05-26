@@ -31,7 +31,7 @@ import android.content.Context;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.R;
 import com.android.settings.testutils.shadow.ShadowBluetoothDevice;
@@ -192,12 +192,12 @@ public class BluetoothDetailsProfilesControllerTest extends BluetoothDetailsCont
     /** Returns the list of SwitchPreference objects added to the screen - there should be one per
      *  Bluetooth profile.
      */
-    private List<SwitchPreference> getProfileSwitches(boolean expectOnlyMConnectable) {
+    private List<com.ssos.support.preferences.SwitchPreference> getProfileSwitches(boolean expectOnlyMConnectable) {
         if (expectOnlyMConnectable) {
             assertThat(mConnectableProfiles).isNotEmpty();
             assertThat(mProfiles.getPreferenceCount() - 1).isEqualTo(mConnectableProfiles.size());
         }
-        List<SwitchPreference> result = new ArrayList<>();
+        List<com.ssos.support.preferences.SwitchPreference> result = new ArrayList<>();
         for (int i = 0; i < mProfiles.getPreferenceCount(); i++) {
             final Preference preference = mProfiles.getPreference(i);
             if (preference instanceof SwitchPreference) {
@@ -207,7 +207,7 @@ public class BluetoothDetailsProfilesControllerTest extends BluetoothDetailsCont
         return result;
     }
 
-     private void verifyProfileSwitchTitles(List<SwitchPreference> switches) {
+     private void verifyProfileSwitchTitles(List<com.ssos.support.preferences.SwitchPreference> switches) {
         for (int i = 0; i < switches.size(); i++) {
             String expectedTitle =
                 mContext.getString(mConnectableProfiles.get(i).getNameResource(mDevice));
@@ -227,7 +227,7 @@ public class BluetoothDetailsProfilesControllerTest extends BluetoothDetailsCont
         addFakeProfile(R.string.bluetooth_profile_a2dp, true);
         addFakeProfile(R.string.bluetooth_profile_headset, false);
         showScreen(mController);
-        List<SwitchPreference> switches = getProfileSwitches(true);
+        List<com.ssos.support.preferences.SwitchPreference> switches = getProfileSwitches(true);
         verifyProfileSwitchTitles(switches);
         assertThat(switches.get(0).isChecked()).isTrue();
         assertThat(switches.get(1).isChecked()).isFalse();
@@ -253,7 +253,7 @@ public class BluetoothDetailsProfilesControllerTest extends BluetoothDetailsCont
         addFakeProfile(R.string.bluetooth_profile_a2dp, true);
         addFakeProfile(R.string.bluetooth_profile_headset, true);
         showScreen(mController);
-        List<SwitchPreference> switches = getProfileSwitches(true);
+        List<com.ssos.support.preferences.SwitchPreference> switches = getProfileSwitches(true);
         SwitchPreference pref = switches.get(0);
 
         // Clicking the pref should cause the profile to become not-preferred.
@@ -293,7 +293,7 @@ public class BluetoothDetailsProfilesControllerTest extends BluetoothDetailsCont
         when(mProfileManager.getPbapProfile()).thenReturn(psp);
 
         showScreen(mController);
-        List<SwitchPreference> switches = getProfileSwitches(false);
+        List<com.ssos.support.preferences.SwitchPreference> switches = getProfileSwitches(false);
         assertThat(switches.size()).isEqualTo(1);
         SwitchPreference pref = switches.get(0);
         assertThat(pref.getTitle()).isEqualTo(mContext.getString(R.string.bluetooth_profile_pbap));
@@ -316,7 +316,7 @@ public class BluetoothDetailsProfilesControllerTest extends BluetoothDetailsCont
         when(mProfileManager.getPbapProfile()).thenReturn(psp);
 
         showScreen(mController);
-        List<SwitchPreference> switches = getProfileSwitches(false);
+        List<com.ssos.support.preferences.SwitchPreference> switches = getProfileSwitches(false);
         assertThat(switches.size()).isEqualTo(1);
         SwitchPreference pref = switches.get(0);
         assertThat(pref.getTitle()).isEqualTo(mContext.getString(R.string.bluetooth_profile_pbap));
@@ -338,7 +338,7 @@ public class BluetoothDetailsProfilesControllerTest extends BluetoothDetailsCont
         when(mProfileManager.getProfileByName(eq(mapProfile.toString()))).thenReturn(mapProfile);
         mDevice.setMessageAccessPermission(BluetoothDevice.ACCESS_REJECTED);
         showScreen(mController);
-        List<SwitchPreference> switches = getProfileSwitches(false);
+        List<com.ssos.support.preferences.SwitchPreference> switches = getProfileSwitches(false);
         assertThat(switches.size()).isEqualTo(1);
         SwitchPreference pref = switches.get(0);
         assertThat(pref.getTitle()).isEqualTo(mContext.getString(R.string.bluetooth_profile_map));

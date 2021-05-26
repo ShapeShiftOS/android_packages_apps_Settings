@@ -29,7 +29,7 @@ import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.telephony.ims.ProvisioningManager;
 
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.network.ims.MockVolteQueryImsState;

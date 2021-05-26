@@ -35,7 +35,7 @@ import android.service.quicksettings.TileService;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.internal.statusbar.IStatusBarService;
 import com.android.settings.R;

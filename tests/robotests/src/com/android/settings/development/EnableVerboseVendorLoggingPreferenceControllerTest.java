@@ -27,7 +27,7 @@ import android.content.Context;
 import android.hardware.dumpstate.V1_1.IDumpstateDevice;
 
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import org.junit.Before;
 import org.junit.Test;

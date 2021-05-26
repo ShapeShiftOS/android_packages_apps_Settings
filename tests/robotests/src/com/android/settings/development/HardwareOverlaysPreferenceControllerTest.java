@@ -34,7 +34,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.testutils.shadow.ShadowParcel;
 

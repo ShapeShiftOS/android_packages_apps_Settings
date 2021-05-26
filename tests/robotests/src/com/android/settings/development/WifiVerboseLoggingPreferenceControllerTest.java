@@ -23,7 +23,7 @@ import android.content.Context;
 import android.net.wifi.WifiManager;
 
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import org.junit.Before;
 import org.junit.Test;

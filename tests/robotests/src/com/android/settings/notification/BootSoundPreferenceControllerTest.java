@@ -25,7 +25,7 @@ import android.content.Context;
 import android.os.SystemProperties;
 
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.R;
 

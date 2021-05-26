@@ -31,7 +31,7 @@ import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 
 import androidx.lifecycle.LifecycleOwner;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.R;
 import com.android.settingslib.core.lifecycle.Lifecycle;

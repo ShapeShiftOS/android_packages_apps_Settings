@@ -32,14 +32,14 @@
         settings:keywords="@string/keywords_battery_saver_schedule"
         settings:controller="com.android.settings.fuelgauge.batterysaver.BatterySaverSchedulePreferenceController"/>
 
-    <SwitchPreference
+    <com.ssos.support.preferences.SwitchPreference
         android:key="battery_saver_sticky"
         android:title="@string/battery_saver_sticky_title_new"
         android:summary="@string/summary_placeholder"
         settings:keywords="@string/keywords_battery_saver_sticky"
         settings:controller="com.android.settings.fuelgauge.batterysaver.BatterySaverStickyPreferenceController"/>
 
-    <SwitchPreference
+    <com.ssos.support.preferences.SwitchPreference
         android:key="battery_saver_rr_switch"
         android:title="@string/battery_saver_refresh_rate_title"
         android:summary="@string/battery_saver_refresh_rate_summary"

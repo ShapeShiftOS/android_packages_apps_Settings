@@ -29,7 +29,7 @@ import android.app.AppOpsManager;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.applications.AppStateAppOpsBridge.PermissionState;
 import com.android.settings.applications.AppStateManageExternalStorageBridge;

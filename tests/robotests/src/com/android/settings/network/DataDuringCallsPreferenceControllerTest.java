@@ -34,7 +34,7 @@ import android.telephony.TelephonyManager;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.network.telephony.DataDuringCallsPreferenceController;
 

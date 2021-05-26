@@ -30,7 +30,7 @@
         android:entryValues="@array/data_usage_period_values"
         android:defaultValue="1" />
 
-    <SwitchPreference
+    <com.ssos.support.preferences.SwitchPreference
         android:key="set_data_warning"
         android:title="@string/set_data_warning"/>
 
@@ -38,7 +38,7 @@
         android:key="data_warning"
         android:title="@string/data_warning" />
 
-    <SwitchPreference
+    <com.ssos.support.preferences.SwitchPreference
         android:key="set_data_limit"
         android:title="@string/set_data_limit" />
 

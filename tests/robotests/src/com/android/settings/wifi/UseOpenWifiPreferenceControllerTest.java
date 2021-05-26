@@ -39,7 +39,7 @@ import android.net.NetworkScorerAppData;
 import android.provider.Settings;
 
 import androidx.fragment.app.Fragment;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.R;
 

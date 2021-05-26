@@ -27,7 +27,7 @@ import android.location.LocationManager;
 import android.net.wifi.WifiManager;
 import android.text.TextUtils;
 
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;

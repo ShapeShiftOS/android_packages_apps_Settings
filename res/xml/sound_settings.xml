@@ -235,37 +235,37 @@
           android:order="-50">
 
         <!-- Dial pad tones -->
-        <SwitchPreference
+        <com.ssos.support.preferences.SwitchPreference
           android:key="dial_pad_tones"
           android:title="@string/dial_pad_tones_title"/>
 
         <!-- Screen locking sounds -->
-        <SwitchPreference
+        <com.ssos.support.preferences.SwitchPreference
           android:key="screen_locking_sounds"
           android:title="@string/screen_locking_sounds_title"/>
 
         <!-- Charging sounds -->
-        <SwitchPreference
+        <com.ssos.support.preferences.SwitchPreference
           android:key="charging_sounds"
           android:title="@string/charging_sounds_nos_title"/>
 
         <!-- Charging vibro -->
-        <SwitchPreference
+        <com.ssos.support.preferences.SwitchPreference
           android:key="charging_vibro"
           android:title="@string/charging_vibro_title" />
 
         <!-- Docking sounds -->
-        <SwitchPreference
+        <com.ssos.support.preferences.SwitchPreference
           android:key="docking_sounds"
           android:title="@string/docking_sounds_title"/>
 
         <!-- Touch sounds -->
-        <SwitchPreference
+        <com.ssos.support.preferences.SwitchPreference
           android:key="touch_sounds"
           android:title="@string/touch_sounds_title"/>
 
         <!-- Vibrate on touch -->
-        <SwitchPreference
+        <com.ssos.support.preferences.SwitchPreference
           android:key="vibrate_on_touch"
           android:title="@string/vibrate_on_touch_title"
           android:summary="@string/vibrate_on_touch_summary"
@@ -278,12 +278,12 @@
           android:summary="%s"/>
 
         <!-- Boot sounds -->
-        <SwitchPreference
+        <com.ssos.support.preferences.SwitchPreference
           android:key="boot_sounds"
           android:title="@string/boot_sounds_title"/>
 
         <!-- Screenshot sounds -->
-        <SwitchPreference
+        <com.ssos.support.preferences.SwitchPreference
           android:key="screenshot_sounds"
           android:title="@string/screenshot_sound_title" />
 
@@ -300,7 +300,7 @@
         android:order="100">
 
                 <!-- Use the same sounds of the work profile -->
-                <SwitchPreference
+                <com.ssos.support.preferences.SwitchPreference
                     android:key="work_use_personal_sounds"
                     android:title="@string/work_use_personal_sounds_title"
                     android:summary="@string/work_use_personal_sounds_summary"

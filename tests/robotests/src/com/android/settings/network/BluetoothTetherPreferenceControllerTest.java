@@ -29,7 +29,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.TetheringManager;
 
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 import androidx.test.core.app.ApplicationProvider;
 
 import org.junit.Before;

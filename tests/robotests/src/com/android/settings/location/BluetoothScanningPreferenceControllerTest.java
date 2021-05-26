@@ -24,7 +24,7 @@ import android.content.ContentResolver;
 import android.provider.Settings;
 import android.provider.Settings.Global;
 
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import org.junit.Before;
 import org.junit.Test;

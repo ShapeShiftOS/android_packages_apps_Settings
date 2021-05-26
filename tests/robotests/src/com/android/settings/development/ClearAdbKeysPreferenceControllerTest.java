@@ -31,7 +31,7 @@ import android.sysprop.AdbProperties;
 
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.testutils.shadow.ShadowUtils;
 

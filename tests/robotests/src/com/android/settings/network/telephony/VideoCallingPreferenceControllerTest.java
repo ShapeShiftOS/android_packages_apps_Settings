@@ -29,7 +29,7 @@ import android.telephony.TelephonyManager;
 import android.telephony.ims.ProvisioningManager;
 
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 
 import com.android.settings.network.ims.MockVolteQueryImsState;
 import com.android.settings.network.ims.MockVtQueryImsState;

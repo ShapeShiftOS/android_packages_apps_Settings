@@ -15,7 +15,7 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <SwitchPreference
+    <com.ssos.support.preferences.SwitchPreference
         android:key="account_test_switch"
         android:title="@string/account_pref_title" />
 

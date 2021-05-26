@@ -31,7 +31,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import com.ssos.support.preferences.SwitchPreference;
 import androidx.test.core.app.ApplicationProvider;
 
 import com.android.settings.R;
