@@ -29,6 +29,6 @@
       android:fillColor="#595959"/>
   <path
       android:pathData="M94.68,69C94.683,64.03 98.715,60.003 103.686,60.006L354.52,60.151C359.491,60.154 363.518,64.186 363.515,69.157L363.409,252.078L94.574,251.922L94.68,69Z"
-      android:fillColor="#121212"/>
+      android:fillColor="@*android:color/primary_dark_device_default_settings"/>
 </vector>
 
