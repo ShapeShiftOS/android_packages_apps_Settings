@@ -261,6 +261,8 @@ public class BatteryInfo {
                 BatteryManager.EXTRA_WARP_CHARGER, false);
         final boolean voocChargeStatus = batteryBroadcast.getBooleanExtra(
                 BatteryManager.EXTRA_VOOC_CHARGER, false);
+        final boolean smartChargeStatus = batteryBroadcast.getBooleanExtra(
+                BatteryManager.EXTRA_SMART_CHARGER, false);
         info.discharging = false;
         info.suggestionLabel = null;
         if (info.isOverheated && status != BatteryManager.BATTERY_STATUS_FULL) {
@@ -282,6 +284,9 @@ public class BatteryInfo {
             } else if (voocChargeStatus) {
                 info.remainingLabel = context.getString(
                         R.string.power_remaining_vooc_charging_duration_only, timeString);
+            } else if (smartChargeStatus) {
+                info.remainingLabel = context.getString(
+                        R.string.power_remaining_smart_charging_duration_only, timeString);
             } else {
                 info.remainingLabel = context.getString(
                         R.string.power_remaining_charging_duration_only, timeString);
