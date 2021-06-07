@@ -484,4 +484,9 @@
     <!-- One shot automatic Brightness -->
     <string name="auto_brightness_one_shot_title">Only apply when screen is turned on</string>
     <string name="auto_brightness_one_shot_summary">Adjustment will occur one time</string>
+
+    <!-- Smart Charging indication -->
+    <string name="smart_charge_indication_title">Smart charging indication</string>
+    <string name="smart_charge_indication_summary">Show whether the device is smart charging in settings and in the lockscreen</string>
+
 </resources>

@@ -57,6 +57,7 @@ public class SmartChargingSettings extends DashboardFragment implements
     private CustomSeekBarPreference mSmartChargingLevel;
     private CustomSeekBarPreference mSmartChargingResumeLevel;
     private SystemSettingSwitchPreference mResetStats;
+    private SystemSettingSwitchPreference mSmartChargeIndication;
 
     private int mSmartChargingLevelDefaultConfig;
     private int mSmartChargingResumeLevelDefaultConfig;
@@ -88,7 +89,7 @@ public class SmartChargingSettings extends DashboardFragment implements
 
         findPreference(FOOTER).setTitle(R.string.smart_charging_footer);
         mResetStats = (SystemSettingSwitchPreference) findPreference("smart_charging_reset_stats");
-
+        mSmartChargeIndication = (SystemSettingSwitchPreference) findPreference("smart_charge_indication");
     }
 
     @Override
@@ -123,6 +124,7 @@ public class SmartChargingSettings extends DashboardFragment implements
         mSmartChargingLevel.setEnabled(enabled);
         mSmartChargingResumeLevel.setEnabled(enabled);
         mResetStats.setEnabled(enabled);
+        mSmartChargeIndication.setEnabled(enabled);
     }
 
     @Override
@@ -135,6 +137,7 @@ public class SmartChargingSettings extends DashboardFragment implements
         mSmartChargingLevel.setEnabled(isChecked);
         mSmartChargingResumeLevel.setEnabled(isChecked);
         mResetStats.setEnabled(isChecked);
+        mSmartChargeIndication.setEnabled(isChecked);
     }
 
     @Override
