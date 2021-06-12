@@ -40,5 +40,6 @@
     <color name="settings_accent_color">@color/oneplus_accent_color</color>
     <color name="oos_bg_of_card">#f1f1f1</color>
     <color name="home_oos_bg_of_card">#f1f1f1</color>
+    <color name="search_bar_background_custom">#f1f1f1</color>
 
 </resources>

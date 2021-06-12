@@ -425,4 +425,8 @@
     <!-- Text padding for EmptyTextSettings -->
     <dimen name="empty_text_padding">24dp</dimen>
 
+    <dimen name="card_elevation_settings_search">0dp</dimen>
+
+    <dimen name="search_layout_margin">16dp</dimen>
+
 </resources>

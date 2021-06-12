@@ -20,8 +20,13 @@ import static com.android.settings.search.actionbar.SearchMenuController.NEED_SE
 import static com.android.settingslib.search.SearchIndexable.MOBILE;
 
 import android.app.settings.SettingsEnums;
+import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.view.View;
 
 import androidx.fragment.app.Fragment;
@@ -52,7 +57,15 @@ public class TopLevelSettings extends DashboardFragment implements
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.top_level_settings;
+        final ContentResolver resolver = getContentResolver();
+        boolean settingsCardsAvailable = Settings.System.getIntForUser(resolver,
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) != 2;
+
+        if (settingsCardsAvailable) {
+            return R.xml.top_level_settings;
+        } else {
+            return R.xml.top_level_settings_no_cards;
+        }
     }
 
     @Override

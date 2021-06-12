@@ -35,14 +35,18 @@ import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_TITL
 
 import android.app.settings.SettingsEnums;
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.IContentProvider;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.ContentObserver;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -87,12 +91,14 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
     private final MetricsFeatureProvider mMetricsFeatureProvider;
     private final CategoryManager mCategoryManager;
     private final PackageManager mPackageManager;
+    private Handler mHandler;
 
     public DashboardFeatureProviderImpl(Context context) {
         mContext = context.getApplicationContext();
         mCategoryManager = CategoryManager.get(context);
         mMetricsFeatureProvider = FeatureFactory.getFactory(context).getMetricsFeatureProvider();
         mPackageManager = context.getPackageManager();
+        Resources resources = context.getResources();
     }
 
     @Override
@@ -126,11 +132,13 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
         if (pref == null) {
             return null;
         }
+
         if (!TextUtils.isEmpty(key)) {
             pref.setKey(key);
         } else {
             pref.setKey(getDashboardKeyForTile(tile));
         }
+
         final List<DynamicDataObserver> outObservers = new ArrayList<>();
         DynamicDataObserver observer = bindTitleAndGetObserver(pref, tile);
         if (observer != null) {
@@ -357,21 +365,29 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
 
     @VisibleForTesting
     void bindIcon(Preference preference, Tile tile, boolean forceRoundedIcon) {
+        boolean settingsCardsAvailable = Settings.System.getIntForUser(preference.getContext().getContentResolver(),
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) != 2;
         // Use preference context instead here when get icon from Tile, as we are using the context
         // to get the style to tint the icon. Using mContext here won't get the correct style.
         final Icon tileIcon = tile.getIcon(preference.getContext());
         if (tileIcon != null) {
             Drawable iconDrawable = tileIcon.loadDrawable(preference.getContext());
+            Log.d("ShapeShiftOS", "Tile key: "+ String.valueOf(getDashboardKeyForTile(tile)));
             if ("com.google.android.gms".equals(tile.getPackageName()) && "Google".equalsIgnoreCase(tile.getTitle(preference.getContext()).toString())) {
                 iconDrawable = preference.getContext().getDrawable(R.drawable.op_ic_homepage_google_settings);
-                preference.setLayoutResource(R.layout.op_home_preference_card_bottom);
+                if (settingsCardsAvailable) {
+                    preference.setLayoutResource(R.layout.op_home_preference_card_bottom);
+                }
             } else if ("com.google.android.apps.wellbeing".equals(tile.getPackageName())) {
                 iconDrawable = preference.getContext().getDrawable(R.drawable.op_ic_homepage_wellbeing_settings);
-                preference.setLayoutResource(R.layout.op_home_preference_card_middle);
+                if (settingsCardsAvailable) {
+                    preference.setLayoutResource(R.layout.op_home_preference_card_middle);
+                }
             } else if (forceRoundedIcon && !TextUtils.equals(mContext.getPackageName(), tile.getPackageName())) {
                 iconDrawable = new AdaptiveIcon(mContext, iconDrawable);
                 ((AdaptiveIcon) iconDrawable).setBackgroundColor(mContext, tile);
             }
+            Log.d("ShapeShiftOS", "Tile title: "+ String.valueOf(tile.getTitle(preference.getContext()).toString()));
             preference.setIcon(iconDrawable);
         } else if (tile.getMetaData() != null
                 && tile.getMetaData().containsKey(META_DATA_PREFERENCE_ICON_URI)) {
