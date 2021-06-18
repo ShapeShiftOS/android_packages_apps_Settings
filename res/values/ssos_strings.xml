@@ -508,7 +508,7 @@
     <string name="dolby_summary">Configure the audio output based on media content</string>
 
     <!-- Face Unlock -->
-    <string name="face_unlock_method_title">Allow face unlock when</string>
+    <string name="face_unlock_method_title">Allow face unlock on lock screen</string>
     <string name="face_unlock_method_default">When the screen is turned on</string>
     <string name="face_unlock_method_swipe">When swiping on lock screen</string>
 
