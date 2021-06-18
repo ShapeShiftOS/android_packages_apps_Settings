@@ -27,4 +27,7 @@
     <color name="home_oos_bg_of_card">@*android:color/material_grey_800</color>
     <color name="search_bar_background_custom">@*android:color/material_grey_800</color>
 
+    <color name="search_bar_text_color">#FFB1B1B1</color>
+    <color name="settings_header_color">#FFFFFFFF</color>
+
 </resources>

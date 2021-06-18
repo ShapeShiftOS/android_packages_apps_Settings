@@ -42,4 +42,7 @@
     <color name="home_oos_bg_of_card">#f1f1f1</color>
     <color name="search_bar_background_custom">#f1f1f1</color>
 
+    <color name="search_bar_text_color">#FFB1B1B1</color>
+    <color name="settings_header_color">#FF000000</color>
+
 </resources>

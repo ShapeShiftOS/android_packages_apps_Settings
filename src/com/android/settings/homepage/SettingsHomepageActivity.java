@@ -38,6 +38,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import com.google.android.material.appbar.AppBarLayout;
 
 import com.android.internal.util.UserIcons;
 
@@ -46,15 +47,17 @@ import com.android.settings.accounts.AvatarViewMixin;
 import com.android.settings.core.HideNonSystemOverlayMixin;
 import com.android.settings.homepage.contextualcards.ContextualCardsFragment;
 import com.android.settings.overlay.FeatureFactory;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import com.android.settingslib.drawable.CircleFramedDrawable;
 
 public class SettingsHomepageActivity extends FragmentActivity {
 
     Context context;
-    ImageView avatarView;
     UserManager mUserManager;
-
+    ImageView toolbarAvatar;
+    AppBarLayout appBarLayout;
+    View searchBar;
     View homepageSpacer;
     View homepageMainLayout;
 
@@ -76,18 +79,17 @@ public class SettingsHomepageActivity extends FragmentActivity {
         FeatureFactory.getFactory(this).getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
 
-        avatarView = root.findViewById(R.id.account_avatar);
-        //final AvatarViewMixin avatarViewMixin = new AvatarViewMixin(this, avatarView);
-        avatarView.setImageDrawable(getCircularUserIcon(context));
-        avatarView.setOnClickListener(new View.OnClickListener() {
+        toolbarAvatar = root.findViewById(R.id.toolbar_avatar);
+        toolbarAvatar.setImageDrawable(getCircularUserIcon(context));
+        toolbarAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.setComponent(new ComponentName("com.android.settings","com.android.settings.Settings$UserSettingsActivity"));
+                intent.setComponent(new ComponentName("com.android.settings",
+                        "com.android.settings.Settings$UserSettingsActivity"));
                 startActivity(intent);
             }
         });
-        //getLifecycle().addObserver(avatarViewMixin);
 
         if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
             // Only allow contextual feature on high ram devices.
@@ -97,13 +99,24 @@ public class SettingsHomepageActivity extends FragmentActivity {
         ((FrameLayout) findViewById(R.id.main_content))
                 .getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
 
-        homepageSpacer = findViewById(R.id.settings_homepage_spacer);
         homepageMainLayout = findViewById(R.id.main_content_scrollable_container);
-
-        if (!isHomepageSpacerEnabled() && homepageSpacer != null && homepageMainLayout != null) {
-            homepageSpacer.setVisibility(View.GONE);
+        if (homepageMainLayout != null) {
             setMargins(homepageMainLayout, 0,0,0,0);
         }
+
+	appBarLayout = findViewById(R.id.app_bar_layout);
+	appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                float offsetAlpha = (Float.valueOf(appBarLayout.getTotalScrollRange() + verticalOffset) / Float.valueOf(appBarLayout.getTotalScrollRange()));
+                toolbarAvatar.setAlpha(offsetAlpha);
+                if (Math.abs(verticalOffset)-appBarLayout.getTotalScrollRange() == 0){
+                    toolbarAvatar.setVisibility(View.GONE);
+                } else {
+                    toolbarAvatar.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
     private void showFragment(Fragment fragment, int id) {
@@ -137,7 +150,6 @@ public class SettingsHomepageActivity extends FragmentActivity {
     @Override
     public void onResume() {
         super.onResume();
-        avatarView.setImageDrawable(getCircularUserIcon(getApplicationContext()));
     }
 
     private boolean isHomepageSpacerEnabled() {
