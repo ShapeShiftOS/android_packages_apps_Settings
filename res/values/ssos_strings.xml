@@ -503,4 +503,8 @@
     <string name="alarm_blocker_warning">Blocking alarms have the potential to cause instability, crashes or data loss.</string>
     <string name="alarm_blocker_display_text">To see and block alarms, turn on alarm blocker.</string>
 
+    <!-- Dolby -->
+    <string name="dolby_title">Dolby Atmos</string>
+    <string name="dolby_summary">Configure the audio output based on media content</string>
+
 </resources>

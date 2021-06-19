@@ -56,6 +56,8 @@ public class SoundSettings extends DashboardFragment implements OnActivityResult
     private static final int REQUEST_CODE = 200;
     private static final int SAMPLE_CUTOFF = 2000;  // manually cap sample playback at 2 seconds
 
+    private static final String AUDIO_DOLBY_ATMOS = "audio_dolby_atmos";
+
     @VisibleForTesting
     static final int STOP_SAMPLE = 1;
 
@@ -89,6 +91,7 @@ public class SoundSettings extends DashboardFragment implements OnActivityResult
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Context mContext = getContext();
         if (savedInstanceState != null) {
             String selectedPreference = savedInstanceState.getString(SELECTED_PREFERENCE_KEY, null);
             if (!TextUtils.isEmpty(selectedPreference)) {
@@ -100,6 +103,12 @@ public class SoundSettings extends DashboardFragment implements OnActivityResult
                             .findFragmentByTag(TAG);
             mDialogFragment = dialogFragment;
         }
+
+        Preference mDolbyPref = (Preference) findPreference(AUDIO_DOLBY_ATMOS);
+        if (!com.android.internal.util.ssos.Utils.isPackageInstalled(mContext,"com.dolby.daxappui")) {
+            getPreferenceScreen().removePreference(mDolbyPref);
+        }
+
     }
 
     @Override

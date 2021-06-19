@@ -158,6 +158,17 @@
         settings:controller="com.android.settings.sound.MediaControlsParentPreferenceController"
         settings:keywords="@string/keywords_media_controls"/>
 
+    <!-- Dolby Atmos -->
+    <Preference
+        android:key="audio_dolby_atmos"
+        android:title="@string/dolby_title"
+        android:order="-108"
+        android:summary="@string/dolby_summary">
+        <intent
+            android:targetPackage="com.dolby.daxappui"
+            android:targetClass="com.dolby.daxappui.MainActivity" />
+    </Preference>
+
     <Preference
         android:key="gesture_prevent_ringing_sound"
         android:title="@string/gesture_prevent_ringing_sound_title"
