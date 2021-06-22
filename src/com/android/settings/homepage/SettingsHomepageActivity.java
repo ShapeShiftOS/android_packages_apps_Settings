@@ -148,7 +148,7 @@ public class SettingsHomepageActivity extends FragmentActivity {
         }
 
         return (Drawable) new CircleFramedDrawable(bitmapUserIcon,
-                (int) context.getResources().getDimension(R.dimen.circle_avatar_size));
+                bitmapUserIcon.getHeight());
     }
 
     @Override
