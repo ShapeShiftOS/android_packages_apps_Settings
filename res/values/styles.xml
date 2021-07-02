@@ -487,7 +487,7 @@
     </style>
 
     <style name="SearchBarStyle">
-        <item name="android:layout_marginHorizontal">24dp</item>
+        <item name="android:layout_marginHorizontal">@dimen/search_layout_margin</item>
         <item name="android:layout_marginTop">16dp</item>
         <item name="cardBackgroundColor">@color/search_bar_background</item>
         <item name="cardElevation">@dimen/card_elevation_settings_search</item>

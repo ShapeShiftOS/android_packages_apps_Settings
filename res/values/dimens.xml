@@ -434,6 +434,6 @@
 
     <dimen name="card_elevation_settings_search">0dp</dimen>
 
-    <dimen name="search_layout_margin">16dp</dimen>
+    <dimen name="search_layout_margin">24dp</dimen>
 
 </resources>

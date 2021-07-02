@@ -45,14 +45,6 @@
         android:fragment="com.android.settings.applications.AppAndNotificationDashboardFragment"/>
 
     <Preference
-        android:key="top_level_shapeshifter"
-        android:title="@string/shapeshifter_title"
-        android:summary="@string/shapeshifter_activity_summary"
-        android:icon="@drawable/op_ic_homepage_shapeshifter_settings"
-        android:order="-95"
-        android:fragment="com.ssos.shapeshifter.ShapeShifterSettings"/>
-
-    <Preference
         android:key="top_level_battery"
         android:title="@string/power_usage_summary_title"
         android:summary="@string/summary_placeholder"

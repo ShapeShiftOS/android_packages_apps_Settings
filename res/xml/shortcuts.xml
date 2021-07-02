@@ -38,7 +38,7 @@
     </shortcut>
     <shortcut
         android:shortcutId="manifest-shortcut-shapeshifter"
-        android:icon="@drawable/ic_settings_shapeshifter"
+        android:icon="@drawable/ic_settings_shapeshifter_shortcut"
         android:shortcutShortLabel="@string/shapeshifter_title" >
         <intent
             android:action="android.intent.action.MAIN"

@@ -39,6 +39,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.card.MaterialCardView;
 
 import com.android.internal.util.UserIcons;
 
@@ -50,6 +51,7 @@ import com.android.settings.overlay.FeatureFactory;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import com.android.settingslib.drawable.CircleFramedDrawable;
+import com.ssos.shapeshifter.ShapeShifterSettings;
 
 public class SettingsHomepageActivity extends FragmentActivity {
 
@@ -60,6 +62,8 @@ public class SettingsHomepageActivity extends FragmentActivity {
     View searchBar;
     View homepageSpacer;
     View homepageMainLayout;
+
+    MaterialCardView mShapeShifterCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +78,14 @@ public class SettingsHomepageActivity extends FragmentActivity {
         Context context = getApplicationContext();
 
         mUserManager = context.getSystemService(UserManager.class);
+
+        mShapeShifterCard = findViewById(R.id.shapeshifter_homepage);
+        mShapeShifterCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startShapeShifter();
+            }
+        });
 
         final Toolbar toolbar = findViewById(R.id.search_action_bar);
         FeatureFactory.getFactory(this).getSearchFeatureProvider()
@@ -117,6 +129,13 @@ public class SettingsHomepageActivity extends FragmentActivity {
                 }
             }
         });
+    }
+
+    private void startShapeShifter() {
+        Intent intent = new Intent();
+        intent.setComponent(new ComponentName("com.android.settings",
+            "com.android.settings.Settings$ShapeShifterSettingsActivity"));
+        startActivity(intent);
     }
 
     private void showFragment(Fragment fragment, int id) {

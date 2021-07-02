@@ -48,19 +48,10 @@
         android:fragment="com.android.settings.applications.AppAndNotificationDashboardFragment"/>
 
     <Preference
-        android:key="top_level_shapeshifter"
-        android:title="@string/shapeshifter_title"
-        android:layout="@layout/op_home_preference_card_bottom"  
-        android:summary="@string/shapeshifter_activity_summary"
-        android:icon="@drawable/op_ic_homepage_shapeshifter_settings"
-        android:order="-95"
-        android:fragment="com.ssos.shapeshifter.ShapeShifterSettings"/>
-
-    <Preference
         android:key="top_level_battery"
         android:title="@string/power_usage_summary_title"
         android:summary="@string/summary_placeholder"
-        android:layout="@layout/op_home_preference_card_top"  
+        android:layout="@layout/op_home_preference_card_middle"  
         android:icon="@drawable/op_ic_homepage_battery_settings"
         android:fragment="com.android.settings.fuelgauge.PowerUsageSummary"
         android:order="-90"
