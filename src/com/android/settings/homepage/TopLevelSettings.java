@@ -59,7 +59,7 @@ public class TopLevelSettings extends DashboardFragment implements
     protected int getPreferenceScreenResId() {
         final ContentResolver resolver = getContentResolver();
         boolean settingsCardsAvailable = Settings.System.getIntForUser(resolver,
-                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) != 2;
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) != 1;
 
         if (settingsCardsAvailable) {
             return R.xml.top_level_settings;
