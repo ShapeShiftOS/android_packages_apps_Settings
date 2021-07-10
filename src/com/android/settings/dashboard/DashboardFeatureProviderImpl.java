@@ -366,7 +366,7 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
     @VisibleForTesting
     void bindIcon(Preference preference, Tile tile, boolean forceRoundedIcon) {
         boolean settingsCardsAvailable = Settings.System.getIntForUser(preference.getContext().getContentResolver(),
-                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) != 2;
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) == 0;
         // Use preference context instead here when get icon from Tile, as we are using the context
         // to get the style to tint the icon. Using mContext here won't get the correct style.
         final Icon tileIcon = tile.getIcon(preference.getContext());

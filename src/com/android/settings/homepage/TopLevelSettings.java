@@ -58,14 +58,17 @@ public class TopLevelSettings extends DashboardFragment implements
     @Override
     protected int getPreferenceScreenResId() {
         final ContentResolver resolver = getContentResolver();
-        boolean settingsCardsAvailable = Settings.System.getIntForUser(resolver,
-                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) != 1;
+        boolean settingsCardsNone = Settings.System.getIntForUser(resolver,
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) == 1;
+        boolean settingsOOS10Dividers = Settings.System.getIntForUser(resolver,
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) == 2;
 
-        if (settingsCardsAvailable) {
-            return R.xml.top_level_settings;
-        } else {
+        if (settingsCardsNone) {
             return R.xml.top_level_settings_no_cards;
+        } else if (settingsOOS10Dividers) {
+            return R.xml.top_level_settings_oos_dividers;
         }
+        return R.xml.top_level_settings;
     }
 
     @Override
