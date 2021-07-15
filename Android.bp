@@ -36,7 +36,9 @@ android_library {
                     "TouchGestures/res"
     ],
 
-    aaptflags: ["--extra-packages com.ssos.shapeshifter"],
+    aaptflags: ["--extra-packages com.ssos.shapeshifter",
+                "--extra-packages com.factor.bouncy"
+    ],
 
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
@@ -68,6 +70,7 @@ android_library {
         "vendor.lineage.fastcharge-V1.0-java",
         "faceunlock_framework",
         "androidx.dynamicanimation_dynamicanimation",
+        "bouncy",
     ],
 
     libs: [
@@ -103,4 +106,10 @@ android_app {
 android_library_import {
     name: "contextualcards",
     aars: ["libs/contextualcards.aar"],
+}
+
+android_library_import {
+    name: "bouncy",
+    aars: ["libs/bouncy-release.aar"],
+    sdk_version: "current",
 }
