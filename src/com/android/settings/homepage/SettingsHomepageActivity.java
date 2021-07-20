@@ -38,32 +38,31 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.android.internal.util.UserIcons;
+import com.android.settings.R;
+import com.android.settings.homepage.contextualcards.ContextualCardsFragment;
+import com.android.settings.overlay.FeatureFactory;
+import com.android.settingslib.drawable.CircleFramedDrawable;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.card.MaterialCardView;
 
-import com.android.internal.util.UserIcons;
-
-import com.android.settings.R;
-import com.android.settings.accounts.AvatarViewMixin;
-import com.android.settings.core.HideNonSystemOverlayMixin;
-import com.android.settings.homepage.contextualcards.ContextualCardsFragment;
-import com.android.settings.overlay.FeatureFactory;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-
-import com.android.settingslib.drawable.CircleFramedDrawable;
-import com.ssos.shapeshifter.ShapeShifterSettings;
-
 public class SettingsHomepageActivity extends FragmentActivity {
 
-    Context context;
     UserManager mUserManager;
     ImageView toolbarAvatar;
     AppBarLayout appBarLayout;
-    View searchBar;
-    View homepageSpacer;
     View homepageMainLayout;
 
     MaterialCardView mShapeShifterCard;
+
+    private static void setMargins(View v, int l, int t, int r, int b) {
+        if (v.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+            p.setMargins(l, t, r, b);
+            v.requestLayout();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,12 +79,7 @@ public class SettingsHomepageActivity extends FragmentActivity {
         mUserManager = context.getSystemService(UserManager.class);
 
         mShapeShifterCard = findViewById(R.id.shapeshifter_homepage);
-        mShapeShifterCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startShapeShifter();
-            }
-        });
+        mShapeShifterCard.setOnClickListener(v -> startShapeShifter());
 
         final Toolbar toolbar = findViewById(R.id.search_action_bar);
         FeatureFactory.getFactory(this).getSearchFeatureProvider()
@@ -93,14 +87,11 @@ public class SettingsHomepageActivity extends FragmentActivity {
 
         toolbarAvatar = root.findViewById(R.id.toolbar_avatar);
         toolbarAvatar.setImageDrawable(getCircularUserIcon(context));
-        toolbarAvatar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.setComponent(new ComponentName("com.android.settings",
-                        "com.android.settings.Settings$UserSettingsActivity"));
-                startActivity(intent);
-            }
+        toolbarAvatar.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.setComponent(new ComponentName("com.android.settings",
+                    "com.android.settings.Settings$UserSettingsActivity"));
+            startActivity(intent);
         });
 
         if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
@@ -113,28 +104,23 @@ public class SettingsHomepageActivity extends FragmentActivity {
 
         homepageMainLayout = findViewById(R.id.main_content_scrollable_container);
         if (homepageMainLayout != null) {
-            setMargins(homepageMainLayout, 0,0,0,0);
+            setMargins(homepageMainLayout, 0, 0, 0, 0);
         }
 
-	appBarLayout = findViewById(R.id.app_bar_layout);
-	appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-            @Override
-            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                float offsetAlpha = (Float.valueOf(appBarLayout.getTotalScrollRange() + verticalOffset) / Float.valueOf(appBarLayout.getTotalScrollRange()));
-                toolbarAvatar.setAlpha(offsetAlpha);
-                if (Math.abs(verticalOffset)-appBarLayout.getTotalScrollRange() == 0){
-                    toolbarAvatar.setVisibility(View.GONE);
-                } else {
-                    toolbarAvatar.setVisibility(View.VISIBLE);
-                }
-            }
+        appBarLayout = findViewById(R.id.app_bar_layout);
+        appBarLayout.addOnOffsetChangedListener((appBarLayout, verticalOffset) -> {
+            float offsetAlpha = (float) (appBarLayout.getTotalScrollRange() + verticalOffset)
+                    / (float) appBarLayout.getTotalScrollRange();
+            boolean visible = Math.abs(verticalOffset) - appBarLayout.getTotalScrollRange() == 0;
+            toolbarAvatar.setAlpha(offsetAlpha);
+            toolbarAvatar.setVisibility(visible ? View.GONE : View.VISIBLE);
         });
     }
 
     private void startShapeShifter() {
         Intent intent = new Intent();
         intent.setComponent(new ComponentName("com.android.settings",
-            "com.android.settings.Settings$ShapeShifterSettingsActivity"));
+                "com.android.settings.Settings$ShapeShifterSettingsActivity"));
         startActivity(intent);
     }
 
@@ -160,27 +146,14 @@ public class SettingsHomepageActivity extends FragmentActivity {
                     context.getResources(), UserHandle.myUserId(), false);
             bitmapUserIcon = UserIcons.convertToBitmap(defaultUserIcon);
         }
-        Drawable drawableUserIcon = new CircleFramedDrawable(bitmapUserIcon,
-                (int) context.getResources().getDimension(R.dimen.circle_avatar_size));
 
-        return drawableUserIcon;
+        return (Drawable) new CircleFramedDrawable(bitmapUserIcon,
+                (int) context.getResources().getDimension(R.dimen.circle_avatar_size));
     }
 
     @Override
     public void onResume() {
         super.onResume();
-    }
-
-    private boolean isHomepageSpacerEnabled() {
-        return true;
-    }
-
-    private static void setMargins (View v, int l, int t, int r, int b) {
-        if (v.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
-            p.setMargins(l, t, r, b);
-            v.requestLayout();
-        }
     }
 
     @VisibleForTesting
