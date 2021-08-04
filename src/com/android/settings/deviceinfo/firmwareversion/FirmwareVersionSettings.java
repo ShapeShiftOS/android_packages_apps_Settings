@@ -17,17 +17,11 @@
 
 package com.android.settings.deviceinfo.firmwareversion;
 
+import android.app.settings.SettingsEnums;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Bundle;
-import android.app.settings.SettingsEnums;
-import android.provider.Settings;
-import android.util.Log;
 import android.provider.SearchIndexableResource;
 import android.widget.Toast;
 
@@ -36,11 +30,11 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
+import com.android.settings.deviceinfo.firmwareversion.EasterEgg;
 
-import androidx.preference.ListPreference;
-import com.ssos.support.preferences.SwitchPreference;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.FragmentManager;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceClickListener;
 import androidx.preference.Preference.OnPreferenceChangeListener;
@@ -89,6 +83,12 @@ public class FirmwareVersionSettings extends DashboardFragment implements OnPref
                         getResources().getString(R.string.emojii),
                         Toast.LENGTH_SHORT);
                 mToast.show();
+                EasterEgg EasterEggFragment = new EasterEgg();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                transaction.replace(this.getId(), EasterEggFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
             } else {
                 if (mToast != null) {
                     mToast.cancel();
