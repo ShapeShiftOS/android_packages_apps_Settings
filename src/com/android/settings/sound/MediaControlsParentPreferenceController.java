@@ -16,8 +16,6 @@
 
 package com.android.settings.sound;
 
-import static android.provider.Settings.Secure.MEDIA_CONTROLS_RESUME;
-
 import android.content.Context;
 import android.provider.Settings;
 
@@ -41,10 +39,10 @@ public class MediaControlsParentPreferenceController extends BasePreferenceContr
     @Override
     public CharSequence getSummary() {
         int summary;
-        if (Settings.Secure.getInt(mContext.getContentResolver(), MEDIA_CONTROLS_RESUME, 1) == 0) {
-            summary = R.string.media_controls_hide_player;
+        if (Settings.System.getInt(mContext.getContentResolver(), Settings.System.QS_MEDIA_PLAYER, 1) == 0) {
+            summary = R.string.qs_media_player_summary_off_controller;
         } else {
-            summary = R.string.media_controls_show_player;
+            summary = R.string.qs_media_player_summary_on_controller;
         }
         return mContext.getText(summary);
     }

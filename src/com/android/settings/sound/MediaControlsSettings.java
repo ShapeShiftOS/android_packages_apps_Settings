@@ -18,27 +18,62 @@ package com.android.settings.sound;
 
 import android.app.settings.SettingsEnums;
 
+import android.content.ContentResolver;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
+import android.provider.Settings;
+
+import androidx.preference.Preference;
+import androidx.preference.PreferenceGroup;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.PreferenceFragment;
+
 import com.android.settings.R;
-import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
+import com.android.settings.SettingsPreferenceFragment;
+
+import com.ssos.support.preferences.SystemSettingSwitchPreference;
 
 /**
  * Media control settings located in the sound menu
  */
 @SearchIndexable
-public class MediaControlsSettings extends DashboardFragment {
+public class MediaControlsSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = "MediaControlsSettings";
+    private static final String QS_MEDIA_PLAYER = "qs_media_player";
+
+    private SystemSettingSwitchPreference mQSMediaPlayer;
 
     @Override
-    protected int getPreferenceScreenResId() {
-        return R.xml.media_controls_settings;
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.media_controls_settings);
+        PreferenceScreen prefScreen = getPreferenceScreen();
+        final ContentResolver resolver = getActivity().getContentResolver();
+
+        mQSMediaPlayer = findPreference(QS_MEDIA_PLAYER);
+        mQSMediaPlayer.setChecked((Settings.System.getInt(resolver,
+                Settings.System.QS_MEDIA_PLAYER, 1) == 1));
+        mQSMediaPlayer.setOnPreferenceChangeListener(this);
     }
 
-    @Override
-    protected String getLogTag() {
-        return TAG;
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mQSMediaPlayer) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.QS_MEDIA_PLAYER, value ? 1 : 0);
+            com.ssos.shapeshifter.utils.Utils.showSystemUiRestartDialog(getContext());
+            return true;
+        }
+        return false;
     }
 
     @Override

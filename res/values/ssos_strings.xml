@@ -515,4 +515,9 @@
     <string name="face_unlock_method_default">When the screen is turned on</string>
     <string name="face_unlock_method_swipe">When swiping on lock screen</string>
 
+    <!-- Media Player -->
+    <string name="qs_media_player_summary_on_controller">Showing media player in quicksettings</string>
+    <string name="qs_media_player_summary_off_controller">Showing media player as a notification</string>
+    <string name="media_controls_summary_resumption">Media player resumption</string>
+
 </resources>
