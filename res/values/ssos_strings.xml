@@ -520,4 +520,8 @@
     <string name="qs_media_player_summary_off_controller">Showing media player as a notification</string>
     <string name="media_controls_summary_resumption">Media player resumption</string>
 
+    <!-- Notification Media Options -->
+    <string name="artwork_media_background_title">Artwork media background</string>
+    <string name="artwork_media_background_summary">Set media artwork as notification media background</string>
+
 </resources>

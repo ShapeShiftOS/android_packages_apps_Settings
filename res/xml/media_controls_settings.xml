@@ -36,4 +36,11 @@
         android:dependency="qs_media_player" 
         app:controller="com.android.settings.sound.MediaControlsPreferenceController" />
 
+    <com.ssos.support.preferences.SystemSettingSwitchPreference
+        android:key="artwork_media_background"
+        android:title="@string/artwork_media_background_title"
+        android:summary="@string/artwork_media_background_summary"
+        android:defaultValue="false" 
+        android:dependency="qs_media_player" />
+
 </PreferenceScreen>
