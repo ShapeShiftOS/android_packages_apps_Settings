@@ -393,7 +393,7 @@
     <string name="cleartext_network_policy_summary">Блокирует весь сетевой трафик без TLS. Требуется конфигурация частного DNS. Примечание: без явных исключений Tor и большинство VPN не будут работать.</string>
 
     <!--  screen, setting option name to change wifi timeout -->
-      <string name="wifi_timeout">Выключить Wi-Fi автоматически</string>
+    <string name="wifi_timeout">Выключить Wi-Fi автоматически</string>
 
     <!--  screen, setting option summary to change wifi timeout -->
     <string name="wifi_timeout_summary">Wi-Fi будет выключен через <xliff:g id="timeout_description">%1$s</xliff:g> если нет подключения к сети</string>
@@ -468,5 +468,45 @@
     <!-- Battery header -->
     <string name="oneplus_battery_header_title">^1%</string>
     <string name="oneplus_battery_menu_stats_total">Посмотреть подробное использование</string>
+
+    <!-- One shot automatic Brightness -->
+    <string name="auto_brightness_one_shot_title">Применять только при включении экрана</string>
+    <string name="auto_brightness_one_shot_summary">Изменение произойдет только один раз</string>
+
+    <!-- Smart Charging indication -->
+    <string name="smart_charge_indication_title">Индикация умной зарядки</string>
+    <string name="smart_charge_indication_summary">Отображение использования умно зарядки в настройках и на экране блокировки</string>
+
+    <!-- Alarm and Wakelock blocker -->
+    <string name="blocker_action_reload">Перезагрузить</string>
+    <string name="blocker_action_save">Сохранить</string>
+    <string name="blocker_action_save_toast">Настройки успешно сохранены</string>
+    <string name="blocker_warning_title">Предупреждение</string>
+    <string name="wakelock_blocker_title">Блокировка вейклоков</string>
+    <string name="wakelock_blocker_summary">Блокирование вейклоков для продления времени работы батареи</string>
+    <string name="wakelock_blocker_warning">Блокировка вейклоков может сделать устройство нестабильным, вызвать краши или потерю данных.</string>
+    <string name="wakelock_blocker_display_text">Включите блокировку вейклоков, чтобы просматривать и блокировать вейклоки.</string>
+    <string name="alarm_blocker_title">Блокирока будильников</string>
+    <string name="alarm_blocker_summary">Блокирование будильников при выключенном экране для продления времени работы батареи</string>
+    <string name="alarm_blocker_warning">Блокировка будильников может сделать устройство нестабильным, вызвать краши или потерю данных.</string>
+    <string name="alarm_blocker_display_text">Включите блокировку будильников, чтобы просматривать и блокировать будильники.</string>
+
+    <!-- Dolby -->
+    <string name="dolby_title">Dolby Atmos</string>
+    <string name="dolby_summary">Настройка звука учитывая ваш медиа-контент</string>
+
+    <!-- Face Unlock -->
+    <string name="face_unlock_method_title">Разрешить разблокировку лицом на экране блокировки</string>
+    <string name="face_unlock_method_default">Когда включен экран</string>
+    <string name="face_unlock_method_swipe">Когда провели пальцем на экране блокировки</string>
+
+    <!-- Media Player -->
+    <string name="qs_media_player_summary_on_controller">Показывать медиаплеер в быстрых настройках</string>
+    <string name="qs_media_player_summary_off_controller">Показывать медиаплеер как уведомление</string>
+    <string name="media_controls_summary_resumption">Возобновление медиаплеера</string>
+
+    <!-- Notification Media Options -->
+    <string name="artwork_media_background_title">Фон медиаплеера</string>
+    <string name="artwork_media_background_summary">Установить обложку меда как фон медиаплеера</string>
 
 </resources>
