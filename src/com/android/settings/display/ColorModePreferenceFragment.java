@@ -28,6 +28,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.preference.PreferenceScreen;
 
 import com.android.settings.R;
+import com.android.settings.display.ShapeShiftScreenColorModePreference;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.widget.RadioButtonPickerFragment;
 import com.android.settingslib.search.SearchIndexable;
@@ -94,15 +95,14 @@ public class ColorModePreferenceFragment extends RadioButtonPickerFragment {
     }
 
     @VisibleForTesting
-    void configureAndInstallPreview(LayoutPreference preview, PreferenceScreen screen) {
-        preview.setSelectable(false);
+    void configureAndInstallPreview(ShapeShiftScreenColorModePreference preview, PreferenceScreen screen) {
         screen.addPreference(preview);
     }
 
     @Override
     protected void addStaticPreferences(PreferenceScreen screen) {
-        final LayoutPreference preview = new LayoutPreference(screen.getContext(),
-                R.layout.color_mode_preview);
+        final ShapeShiftScreenColorModePreference preview =
+            new ShapeShiftScreenColorModePreference(screen.getContext());
         configureAndInstallPreview(preview, screen);
     }
 

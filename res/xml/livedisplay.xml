@@ -19,6 +19,9 @@
         android:key="livedisplay"
         android:title="@*android:string/live_display_title">
 
+    <com.android.settings.display.ShapeShiftScreenColorModePreference 
+            android:key="screen_color_mode_page" />
+
     <!-- Color profile -->
     <ListPreference
             android:key="live_display_color_profile"
