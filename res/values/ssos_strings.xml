@@ -147,6 +147,8 @@
     <!-- Global Actions -->
     <string name="global_actions_advanced_reboot_title">Enable advanced restart</string>
     <string name="global_actions_advanced_reboot_summary">Show options for recovery and bootloader</string>
+    <string name="secure_reboot_title">Secure power menu</string>
+    <string name="secure_reboot_summary">Allow accessing power menu on secure lockscreen</string>
 
     <!-- Vibration patterns -->
     <string name="vibration_pattern_title">Ringtone vibration pattern</string>
