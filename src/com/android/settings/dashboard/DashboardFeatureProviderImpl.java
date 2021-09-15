@@ -365,29 +365,15 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
 
     @VisibleForTesting
     void bindIcon(Preference preference, Tile tile, boolean forceRoundedIcon) {
-        boolean settingsCardsAvailable = Settings.System.getIntForUser(preference.getContext().getContentResolver(),
-                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) == 0;
         // Use preference context instead here when get icon from Tile, as we are using the context
         // to get the style to tint the icon. Using mContext here won't get the correct style.
         final Icon tileIcon = tile.getIcon(preference.getContext());
         if (tileIcon != null) {
             Drawable iconDrawable = tileIcon.loadDrawable(preference.getContext());
-            Log.d("ShapeShiftOS", "Tile key: "+ String.valueOf(getDashboardKeyForTile(tile)));
-            if ("com.google.android.gms".equals(tile.getPackageName()) && "Google".equalsIgnoreCase(tile.getTitle(preference.getContext()).toString())) {
-                iconDrawable = preference.getContext().getDrawable(R.drawable.op_ic_homepage_google_settings);
-                if (settingsCardsAvailable) {
-                    preference.setLayoutResource(R.layout.op_home_preference_card_bottom);
-                }
-            } else if ("com.google.android.apps.wellbeing".equals(tile.getPackageName())) {
-                iconDrawable = preference.getContext().getDrawable(R.drawable.op_ic_homepage_wellbeing_settings);
-                if (settingsCardsAvailable) {
-                    preference.setLayoutResource(R.layout.op_home_preference_card_middle);
-                }
-            } else if (forceRoundedIcon && !TextUtils.equals(mContext.getPackageName(), tile.getPackageName())) {
+            if (forceRoundedIcon && !TextUtils.equals(mContext.getPackageName(), tile.getPackageName())) {
                 iconDrawable = new AdaptiveIcon(mContext, iconDrawable);
                 ((AdaptiveIcon) iconDrawable).setBackgroundColor(mContext, tile);
             }
-            Log.d("ShapeShiftOS", "Tile title: "+ String.valueOf(tile.getTitle(preference.getContext()).toString()));
             preference.setIcon(iconDrawable);
         } else if (tile.getMetaData() != null
                 && tile.getMetaData().containsKey(META_DATA_PREFERENCE_ICON_URI)) {

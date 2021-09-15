@@ -20,6 +20,9 @@ import android.app.settings.SettingsEnums;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.FeatureFlagUtils;
@@ -487,6 +490,9 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
         // Create a list to track which tiles are to be removed.
         final Map<String, List<DynamicDataObserver>> remove = new ArrayMap(mDashboardTilePrefKeys);
 
+        boolean settingsCardsAvailable = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.STYLE_OVERLAY_SETTINGS_CARDS, 0, UserHandle.USER_CURRENT) == 0;
+
         // Install dashboard tiles.
         final boolean forceRoundedIcons = shouldForceRoundedIcon();
         for (Tile tile : tiles) {
@@ -512,6 +518,18 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
                                 forceRoundedIcons, getMetricsCategory(), pref, tile, key,
                                 mPlaceholderPreferenceController.getOrder());
                 screen.addPreference(pref);
+                String prefStr = pref.getKey().toString();
+                if (prefStr.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity")) {
+                    pref.setIcon(R.drawable.op_ic_homepage_wellbeing_settings);
+                    if (settingsCardsAvailable) {
+                        pref.setLayoutResource(R.layout.op_home_preference_card_middle);
+                    }
+                } else if (prefStr.equals("dashboard_tile_pref_com.google.android.gms.app.settings.GoogleSettingsIALink")) {
+                    pref.setIcon(R.drawable.op_ic_homepage_google_settings);
+                    if (settingsCardsAvailable) {
+                        pref.setLayoutResource(R.layout.op_home_preference_card_bottom);
+                    }
+                }
                 registerDynamicDataObservers(observers);
                 mDashboardTilePrefKeys.put(key, observers);
             }
