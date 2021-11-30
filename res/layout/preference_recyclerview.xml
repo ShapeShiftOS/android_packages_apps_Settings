@@ -14,14 +14,16 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
+<?xml version="1.0" encoding="utf-8"?>
 <com.factor.bouncy.BouncyRecyclerView
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@id/recycler_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clipToPadding="false"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:recyclerview_fling_animation_size=".5"
+    app:recyclerview_overscroll_animation_size=".5"
+    app:recyclerview_damping_ratio="DAMPING_RATIO_HIGH_BOUNCY"
+    app:recyclerview_stiffness="STIFFNESS_LOW"
+    app:allow_drag_reorder="true"
+    app:allow_item_swipe="true" 
     android:scrollbars="none"
-    app:recyclerview_damping_ratio="DAMPING_RATIO_LOW_BOUNCY"
-    app:recyclerview_fling_animation_size=".2"
-    app:recyclerview_overscroll_animation_size=".2"/>
+    android:id="@+id/recycler_view" android:paddingTop="0.0dip" android:paddingBottom="0.0dip" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" style="?preferenceFragmentListStyle"
+   />
