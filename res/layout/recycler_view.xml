@@ -14,10 +14,18 @@
   See the License for the specific language governing permissions and
   limitations under the License.
   -->
-<androidx.recyclerview.widget.RecyclerView
+<com.factor.bouncy.BouncyRecyclerView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    app:recyclerview_fling_animation_size=".5"
+    app:recyclerview_overscroll_animation_size=".5"
+    app:recyclerview_damping_ratio="DAMPING_RATIO_HIGH_BOUNCY"
+    app:recyclerview_stiffness="STIFFNESS_MEDIUM"
+    app:allow_drag_reorder="true"
+    app:allow_item_swipe="false"
+    android:overScrollMode="never" 
     android:id="@+id/recycler_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="8dp"
-    android:scrollbars="none" />
+    android:scrollbars="none"
+    android:paddingTop="8dp"/>
