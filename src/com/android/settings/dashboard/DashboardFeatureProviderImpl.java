@@ -77,10 +77,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import android.content.Context;
-import android.provider.Settings;
-import android.content.ContentResolver;
-
 /**
  * Impl for {@code DashboardFeatureProvider}.
  */
@@ -367,29 +363,6 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
         }
     }
 
-    protected int getWellbeingPreferenceScreen() {
-		int mobxLayouts = Settings.System.getInt(mContext.getContentResolver(), "style_overlay_settings_cards", 0);
-		if (mobxLayouts != 0) {
-			if (mobxLayouts == 1) {
-				return mContext.getResources().getIdentifier("preference", "layout", mContext.getPackageName());
-			} else if (mobxLayouts == 2) {
-				return mContext.getResources().getIdentifier("preference", "layout", mContext.getPackageName());
-			}
-		}
-		return mContext.getResources().getIdentifier("op_home_preference_card_middle", "layout", mContext.getPackageName());
-     }
-	
-    protected int getGooglePreferenceScreen() {
-		int mobxLayouts = Settings.System.getInt(mContext.getContentResolver(), "style_overlay_settings_cards", 0);
-		if (mobxLayouts != 0) {
-			if (mobxLayouts == 1) {
-				return mContext.getResources().getIdentifier("preference", "layout", mContext.getPackageName());
-			} else if (mobxLayouts == 2) {
-				return mContext.getResources().getIdentifier("preference", "layout", mContext.getPackageName());
-			}
-		}
-		return mContext.getResources().getIdentifier("op_home_preference_card_bottom", "layout", mContext.getPackageName());
-    }
     @VisibleForTesting
     void bindIcon(Preference preference, Tile tile, boolean forceRoundedIcon) {
         // Use preference context instead here when get icon from Tile, as we are using the context
@@ -397,15 +370,7 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
         final Icon tileIcon = tile.getIcon(preference.getContext());
         if (tileIcon != null) {
             Drawable iconDrawable = tileIcon.loadDrawable(preference.getContext());
-            if (tile.getPackageName().equals(PACKAGENAME_GMS)
-                    && tile.getTitle(preference.getContext()).toString().equalsIgnoreCase("Google")) {
-                iconDrawable = preference.getContext().getDrawable(R.drawable.op_ic_homepage_google_settings);
-                preference.setLayoutResource(getGooglePreferenceScreen());
-            } else if (tile.getPackageName().equals(PACKAGENAME_WELLBEING)) {
-                iconDrawable = preference.getContext().getDrawable(R.drawable.op_ic_homepage_wellbeing_settings);
-                preference.setLayoutResource(getWellbeingPreferenceScreen());
-            } else if (forceRoundedIcon
-                    && !TextUtils.equals(mContext.getPackageName(), tile.getPackageName())) {
+            if (forceRoundedIcon && !TextUtils.equals(mContext.getPackageName(), tile.getPackageName())) {
                 iconDrawable = new AdaptiveIcon(mContext, iconDrawable);
                 ((AdaptiveIcon) iconDrawable).setBackgroundColor(mContext, tile);
             }
