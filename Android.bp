@@ -76,6 +76,7 @@ android_library {
         "windowExtLib",
         "VendorSupport-preference",
         "powerusagefeaturegoogle",
+        "faceunlock_framework",
     ],
 
     libs: [
