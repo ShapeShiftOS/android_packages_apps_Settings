@@ -17,6 +17,10 @@
     <string name="about_device_name">ShapeShiftOS codename</string>
     <string name="ssos_version">ShapeShiftOS version</string>
 
+    <!-- General -->
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="longpress_to_clipboard">Long-press to copy</string>
+
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">Tap to show info</string>
 
