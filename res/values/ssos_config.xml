@@ -19,7 +19,7 @@
 
     <!-- Settings intelligence suggestions class -->
     <string name="config_settingsintelligence_suggestions_class" translatable="false">
-        com.android.settings.intelligence.suggestions.SuggestionService
+        com.google.android.settings.intelligence.modules.suggestions.SuggestionService
     </string>
 
     <!-- Whether to show min refresh rate in display settings -->
