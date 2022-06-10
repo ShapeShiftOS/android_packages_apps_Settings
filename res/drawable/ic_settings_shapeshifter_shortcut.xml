@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/shortcut_background"/>
+    <foreground>
+        <vector
+            android:width="120dp"
+            android:height="120dp"
+            android:viewportWidth="200"
+            android:viewportHeight="200">
+            <group android:translateX="72.0" android:translateY="72.0">
+            <path
+                android:fillColor="@*android:color/accent_device_default_light"
+                android:pathData="M46.22 5.78v5.78H34.67V5.78h11.55zm-28.89 0V23.1H5.78V5.78h11.55zm28.9 23.1v17.34H34.66V28.9h11.55zm-28.9 11.56v5.78H5.78v-5.78h11.55zM52 0H28.89v17.33H52V0zM23.11 0H0v28.89h23.11V0zM52 23.11H28.89V52H52V23.11zM23.11 34.67H0V52h23.11V34.67z"/>
+            </group>
+        </vector>
+    </foreground>
+</adaptive-icon>
