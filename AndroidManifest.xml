@@ -4297,6 +4297,10 @@
                   android:label="@string/shapeshifter_title"
                   android:exported="true"
                   android:parentActivityName="com.android.settings">
+            <intent-filter android:priority="69">
+                <action android:name="com.android.settings.SHAPE_SHIFTER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <intent-filter>
                 <action android:name="com.android.settings.action.SETTINGS"/>
             </intent-filter>
