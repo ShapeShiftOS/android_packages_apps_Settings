@@ -47,7 +47,14 @@ android_library {
     srcs: [
         "src/**/*.java",
         "src/**/*.kt",
+        "ShapeShifter/**/*.java",
     ],
+
+    resource_dirs: ["res",
+                    "ShapeShifter/res"
+    ],
+
+    aaptflags: ["--extra-packages com.ssos.shapeshifter"],
 
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
