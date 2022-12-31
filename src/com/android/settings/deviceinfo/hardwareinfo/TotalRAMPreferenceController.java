@@ -48,17 +48,6 @@ public class TotalRAMPreferenceController extends BasePreferenceController {
     }
 
     @Override
-    public boolean isCopyableSlice() {
-        return true;
-    }
-
-    @Override
-    public void copy() {
-        Sliceable.setCopyContent(mContext, getSummary(),
-                mContext.getText(R.string.total_ram));
-    }
-
-    @Override
     public CharSequence getSummary() {
         ActivityManager actManager = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
         ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();

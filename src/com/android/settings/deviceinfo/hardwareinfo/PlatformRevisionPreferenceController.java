@@ -46,17 +46,6 @@ public class PlatformRevisionPreferenceController extends BasePreferenceControll
     }
 
     @Override
-    public boolean isCopyableSlice() {
-        return true;
-    }
-
-    @Override
-    public void copy() {
-        Sliceable.setCopyContent(mContext, getSummary(),
-                mContext.getText(R.string.platform_revision));
-    }
-
-    @Override
     public CharSequence getSummary() {
         return SystemProperties.get("ro.board.platform");
     }
